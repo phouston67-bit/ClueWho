@@ -10,8 +10,8 @@ Built with **Next.js 16 (App Router, TypeScript)**, **Tailwind CSS**, the
 
 ## How it works
 
-1. **Pick a category** (Actors, Musicians, Athletes, Historical Figures,
-   Scientists, Politicians, Business Leaders) or hit "Surprise me".
+1. **Pick a category** (Actors, Musicians, Athletes, Football, Historical
+   Figures, Scientists, Politicians, Business Leaders) or hit "Surprise me".
 2. The server (`POST /api/round/start`) secretly picks a person from
    `data/people.json` and returns only their **photo + category** - never
    the name or facts - plus an opaque, signed round token.
@@ -66,7 +66,7 @@ lib/
   people.ts       # Server-only dataset access
   leaderboard.ts  # Best-effort client-side leaderboard read/write
   types.ts        # Shared domain types
-data/people.json          # Curated dataset (~12 people x 7 categories)
+data/people.json          # Curated dataset (~96 people across 8 categories)
 scripts/seed-people.ts    # Resolves real licensed photos from Wikidata/Commons
 db/schema.sql             # Optional Supabase schema + RLS policy stubs
 ```
@@ -99,9 +99,10 @@ Then fill in:
 ### 3. (Optional) Set up Supabase
 
 Supabase is **entirely optional** - the game works fully without it (round
-state lives in signed tokens; streak/best-streak are stored in
-`localStorage`). Configuring it adds a global leaderboard and lays the
-groundwork for cross-device accounts.
+state lives in signed tokens; streak/best-streak - and a short "recently
+seen" list used to avoid repeating the same person two rounds in a row -
+are stored in `localStorage`). Configuring it adds a global leaderboard and
+lays the groundwork for cross-device accounts.
 
 1. Create a free project at <https://supabase.com>.
 2. Open the SQL Editor and run the contents of `db/schema.sql`.
@@ -115,9 +116,10 @@ anyone can read the leaderboard). Tighten them (e.g. scope to
 
 ### 4. Seed real, licensed photos
 
-`data/people.json` ships with ~12 people across each of the 7 categories,
-but the `image` field starts as a `TODO` placeholder (the app shows a 🕵️
-silhouette card instead of a photo until seeded). Run:
+`data/people.json` ships with ~96 people across 8 categories (~12 each,
+Football a little larger at 13), but the `image` field starts as a `TODO`
+placeholder (the app shows a 🕵️ silhouette card instead of a photo until
+seeded). Run:
 
 ```bash
 npm run seed
@@ -209,7 +211,7 @@ to change.
 - [ ] Add a real `OPENAI_API_KEY` with billing enabled for production
       traffic volume.
 - [ ] Set a strong, unique `SESSION_SECRET` in your production environment.
-- [ ] `npm run seed` has already been run once (83/84 people have real,
+- [ ] `npm run seed` has already been run once (95/96 people have real,
       licensed Commons photos). `Cleopatra` has no free-use image on
       Wikidata and still shows the placeholder card - either accept this,
       pick a different person for that slot, or manually source/attribute a

@@ -16,6 +16,15 @@ import { recordLeaderboardEntry } from "@/lib/leaderboard";
 const STREAK_KEY = "cluewho_streak";
 const BEST_STREAK_KEY = "cluewho_best_streak";
 const DISPLAY_NAME_KEY = "cluewho_display_name";
+const RECENT_PEOPLE_KEY = "cluewho_recent_people";
+/**
+ * How many recently-revealed person ids to keep excluding from future
+ * picks. Capped (rather than unbounded) so the exclusion list doesn't grow
+ * forever and so a category can still be replayed once fully cycled - the
+ * server falls back to the full pool anyway if an exclusion would leave it
+ * empty, so this is just a soft "don't repeat too soon" window.
+ */
+const RECENT_PEOPLE_LIMIT = 20;
 
 type Phase = "picking" | "playing" | "revealed";
 
@@ -32,6 +41,7 @@ interface RoundState {
 }
 
 interface RevealState {
+  id: string;
   name: string;
   category: string;
   revealFact: string;
@@ -44,6 +54,26 @@ function readNumber(key: string): number {
   const raw = window.localStorage.getItem(key);
   const parsed = raw ? parseInt(raw, 10) : 0;
   return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function readRecentPersonIds(): string[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(RECENT_PEOPLE_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed.filter((id) => typeof id === "string") : [];
+  } catch {
+    return [];
+  }
+}
+
+function rememberRecentPersonId(id: string, current: string[]): string[] {
+  const next = [id, ...current.filter((existing) => existing !== id)].slice(
+    0,
+    RECENT_PEOPLE_LIMIT
+  );
+  window.localStorage.setItem(RECENT_PEOPLE_KEY, JSON.stringify(next));
+  return next;
 }
 
 async function postJson<T>(url: string, body: unknown): Promise<T> {
@@ -65,6 +95,7 @@ export default function GameBoard() {
   const [reveal, setReveal] = useState<RevealState | null>(null);
   const [streak, setStreak] = useState(0);
   const [bestStreak, setBestStreak] = useState(0);
+  const [recentPersonIds, setRecentPersonIds] = useState<string[]>([]);
   const [startLoading, setStartLoading] = useState(false);
   const [askLoading, setAskLoading] = useState(false);
   const [guessLoading, setGuessLoading] = useState(false);
@@ -83,6 +114,7 @@ export default function GameBoard() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setStreak(readNumber(STREAK_KEY));
     setBestStreak(readNumber(BEST_STREAK_KEY));
+    setRecentPersonIds(readRecentPersonIds());
   }, []);
 
   const persistStreaks = useCallback((nextStreak: number, nextBest: number) => {
@@ -102,7 +134,11 @@ export default function GameBoard() {
           category: string;
           image: PersonImage;
           maxQuestions: number;
-        }>("/api/round/start", { category, currentStreak: streak });
+        }>("/api/round/start", {
+          category,
+          currentStreak: streak,
+          excludeIds: recentPersonIds,
+        });
         setRound({
           roundToken: data.roundToken,
           category: data.category,
@@ -122,7 +158,7 @@ export default function GameBoard() {
         setStartLoading(false);
       }
     },
-    [streak]
+    [streak, recentPersonIds]
   );
 
   const finishRound = useCallback(
@@ -134,6 +170,7 @@ export default function GameBoard() {
       const nextStreak = won ? result.score.newStreak : 0;
       const nextBest = Math.max(bestStreak, nextStreak);
       persistStreaks(nextStreak, nextBest);
+      setRecentPersonIds((current) => rememberRecentPersonId(result.id, current));
 
       const displayName =
         window.localStorage.getItem(DISPLAY_NAME_KEY) || "Anonymous";
@@ -151,10 +188,17 @@ export default function GameBoard() {
     async (roundToken: string) => {
       try {
         const data = await postJson<{
-          person: { name: string; category: string; revealFact: string; image: PersonImage };
+          person: {
+            id: string;
+            name: string;
+            category: string;
+            revealFact: string;
+            image: PersonImage;
+          };
           score: ScoreBreakdownDTO;
         }>("/api/round/reveal", { roundToken });
         finishRound({
+          id: data.person.id,
           name: data.person.name,
           category: data.person.category,
           revealFact: data.person.revealFact,
@@ -216,7 +260,13 @@ export default function GameBoard() {
         const data = await postJson<
           | {
               correct: true;
-              person: { name: string; category: string; revealFact: string; image: PersonImage };
+              person: {
+                id: string;
+                name: string;
+                category: string;
+                revealFact: string;
+                image: PersonImage;
+              };
               score: ScoreBreakdownDTO;
             }
           | { correct: false; roundToken: string; wrongGuesses: number }
@@ -224,6 +274,7 @@ export default function GameBoard() {
 
         if (data.correct) {
           finishRound({
+            id: data.person.id,
             name: data.person.name,
             category: data.person.category,
             revealFact: data.person.revealFact,

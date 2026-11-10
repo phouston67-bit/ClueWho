@@ -16,6 +16,7 @@ import { SCORING_RULES } from "@/lib/scoring";
 const bodySchema = z.object({
   category: z.string().optional(),
   currentStreak: z.number().int().min(0).max(1000).optional().default(0),
+  excludeIds: z.array(z.string()).max(200).optional().default([]),
 });
 
 export async function POST(req: NextRequest) {
@@ -29,7 +30,7 @@ export async function POST(req: NextRequest) {
 
   let person;
   try {
-    person = pickRandomPerson(category);
+    person = pickRandomPerson(category, parsed.data.excludeIds);
   } catch (err) {
     return NextResponse.json(
       { error: (err as Error).message },

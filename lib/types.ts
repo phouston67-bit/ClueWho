@@ -7,6 +7,7 @@ export const CATEGORIES = [
   "Actors",
   "Musicians",
   "Athletes",
+  "Football",
   "Historical Figures",
   "Scientists",
   "Politicians",

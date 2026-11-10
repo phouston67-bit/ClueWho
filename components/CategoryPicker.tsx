@@ -6,6 +6,7 @@ const CATEGORY_EMOJI: Record<string, string> = {
   Actors: "🎬",
   Musicians: "🎤",
   Athletes: "🏅",
+  Football: "⚽",
   "Historical Figures": "🏛️",
   Scientists: "🔬",
   Politicians: "🏛️",

@@ -544,7 +544,7 @@
   {
     "id": "lionel-messi",
     "name": "Lionel Messi",
-    "category": "Athletes",
+    "category": "Football",
     "aliases": [],
     "facts": [
       "Argentine professional footballer.",
@@ -564,7 +564,7 @@
   {
     "id": "cristiano-ronaldo",
     "name": "Cristiano Ronaldo",
-    "category": "Athletes",
+    "category": "Football",
     "aliases": [],
     "facts": [
       "Portuguese professional footballer.",
@@ -684,7 +684,7 @@
   {
     "id": "pele",
     "name": "Pelé",
-    "category": "Athletes",
+    "category": "Football",
     "aliases": [],
     "facts": [
       "Brazilian former professional footballer.",
@@ -1679,5 +1679,253 @@
       "license": "CC BY 2.0",
       "attribution": "Financial Times via Wikimedia Commons (Flickr: Sheryl Sandberg, Facebook), licensed under CC BY 2.0."
     }
+  },
+  {
+    "id": "diego-maradona",
+    "name": "Diego Maradona",
+    "category": "Football",
+    "aliases": [],
+    "facts": [
+      "Argentine professional footballer, active mainly 1976-1997.",
+      "Captained Argentina to the 1986 FIFA World Cup title.",
+      "Scored the famous 'Hand of God' and 'Goal of the Century' in the same 1986 match.",
+      "Widely ranked among the greatest footballers of all time."
+    ],
+    "revealFact": "He scored two of football's most famous goals in the same single World Cup match.",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/4/48/Argentina_celebrando_copa_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Argentina_celebrando_copa_(cropped).jpg",
+      "license": "Public domain",
+      "attribution": "Unknown authorUnknown author via Wikimedia Commons (El Gráfico), licensed under Public domain."
+    },
+    "wikidataId": "Q17515"
+  },
+  {
+    "id": "zinedine-zidane",
+    "name": "Zinedine Zidane",
+    "category": "Football",
+    "aliases": [
+      "Zizou"
+    ],
+    "facts": [
+      "French former professional footballer and manager.",
+      "Won the 1998 FIFA World Cup with France as a player.",
+      "Later managed Real Madrid to three consecutive Champions League titles.",
+      "Won the Ballon d'Or in 1998."
+    ],
+    "revealFact": "He won the World Cup as a player and the Champions League three times in a row as a coach.",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Zinedine_Zidane_by_Tasnim_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Zinedine_Zidane_by_Tasnim_03.jpg",
+      "license": "CC BY 4.0",
+      "attribution": "Hadi Abyar via Wikimedia Commons (https://newsmedia.tasnimnews.ir/Tasnim/Uploaded/Image/1396/09/22/1396092209314019412768864.jpg), licensed under CC BY 4.0."
+    },
+    "wikidataId": "Q1835"
+  },
+  {
+    "id": "ronaldinho",
+    "name": "Ronaldinho",
+    "category": "Football",
+    "aliases": [
+      "Ronaldo de Assis Moreira"
+    ],
+    "facts": [
+      "Brazilian former professional footballer.",
+      "Won the FIFA World Cup with Brazil in 2002.",
+      "Won the Ballon d'Or and FIFA World Player of the Year in 2005.",
+      "Known for his flair, skill moves, and playmaking at Barcelona."
+    ],
+    "revealFact": "He was named FIFA World Player of the Year back-to-back in the mid-2000s.",
+    "wikidataId": "Q39444",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Ronaldinho_in_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Ronaldinho_in_2019.jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Marcos Corrêa/PR via Wikimedia Commons (Palácio do Planalto), licensed under CC BY 2.0."
+    }
+  },
+  {
+    "id": "david-beckham",
+    "name": "David Beckham",
+    "category": "Football",
+    "aliases": [],
+    "facts": [
+      "English former professional footballer.",
+      "Played for Manchester United, Real Madrid, and the LA Galaxy.",
+      "Famous for his precise passing and free-kick technique.",
+      "Captained the England national team."
+    ],
+    "revealFact": "He helped popularize soccer in the United States during his time with the LA Galaxy.",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/David_Beckham_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:David_Beckham_2009.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "The Democratic Alliance via Wikimedia Commons (David Beckham), licensed under CC BY-SA 2.0."
+    },
+    "wikidataId": "Q10520"
+  },
+  {
+    "id": "neymar",
+    "name": "Neymar",
+    "category": "Football",
+    "aliases": [
+      "Neymar Jr"
+    ],
+    "facts": [
+      "Brazilian professional footballer.",
+      "Was once the most expensive player in football history after his transfer to PSG.",
+      "Won Olympic gold with Brazil in 2016.",
+      "Known for his dribbling and flair on the pitch."
+    ],
+    "revealFact": "His 2017 transfer briefly made him the most expensive footballer ever.",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Neymar_Junior_Brazil_V_Morocco_13_June_2026-40.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Neymar_Junior_Brazil_V_Morocco_13_June_2026-40.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Bryan Berlin via Wikimedia Commons (Own work), licensed under CC BY-SA 4.0."
+    },
+    "wikidataId": "Q142794"
+  },
+  {
+    "id": "kylian-mbappe",
+    "name": "Kylian Mbappé",
+    "category": "Football",
+    "aliases": [],
+    "facts": [
+      "French professional footballer known for his speed.",
+      "Won the FIFA World Cup with France in 2018 as a teenager.",
+      "Scored a hat-trick in the 2022 World Cup final.",
+      "Has played for Monaco, Paris Saint-Germain, and Real Madrid."
+    ],
+    "revealFact": "He scored a hat-trick in a World Cup final, a feat only achieved a few times in history.",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Kylian_Mbappe_France_v_Senegal_16_June_2026-391_(cropped).jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Bryan Berlin via Wikimedia Commons (Own work), licensed under CC BY-SA 4.0."
+    },
+    "wikidataId": "Q21621995"
+  },
+  {
+    "id": "thierry-henry",
+    "name": "Thierry Henry",
+    "category": "Football",
+    "aliases": [],
+    "facts": [
+      "French former professional footballer.",
+      "Arsenal's all-time leading goal scorer.",
+      "Won the FIFA World Cup with France in 1998.",
+      "Part of Arsenal's unbeaten 'Invincibles' Premier League season."
+    ],
+    "revealFact": "He is the all-time top scorer for his famous London club.",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Thierry_Henry_%2851649035951%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Thierry_Henry_(51649035951)_(cropped).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Web Summit via Wikimedia Commons (DG1_8737a), licensed under CC BY 2.0."
+    },
+    "wikidataId": "Q45901"
+  },
+  {
+    "id": "johan-cruyff",
+    "name": "Johan Cruyff",
+    "category": "Football",
+    "aliases": [],
+    "facts": [
+      "Dutch former professional footballer and influential coach.",
+      "Pioneered 'Total Football' with the Netherlands and Ajax in the 1970s.",
+      "Won three consecutive Ballon d'Or awards.",
+      "A signature turning skill move is named after him."
+    ],
+    "revealFact": "A famous football skill move, the 'Cruyff Turn', is named directly after him.",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Johan_Cruijff_%281974%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Johan_Cruijff_(1974).jpg",
+      "license": "CC0",
+      "attribution": "Rob Mieremet / Anefo via Wikimedia Commons (Nationaal Archief), licensed under CC0."
+    },
+    "wikidataId": "Q17163"
+  },
+  {
+    "id": "megan-rapinoe",
+    "name": "Megan Rapinoe",
+    "category": "Football",
+    "aliases": [],
+    "facts": [
+      "American former professional soccer player.",
+      "Won the FIFA Women's World Cup with the USA in 2015 and 2019.",
+      "Won the Golden Boot and Golden Ball at the 2019 Women's World Cup.",
+      "Known for her advocacy for equal pay in soccer."
+    ],
+    "revealFact": "She won both the top scorer and best player awards at the same Women's World Cup.",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Megan_Rapinoe_Stat_Sports_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Megan_Rapinoe_Stat_Sports_2.jpg",
+      "license": "CC BY 3.0",
+      "attribution": "Daniel Nickson via Wikimedia Commons (Vimeo: Stat Sports: Megan Rapinoe + Alex Morgan (view archived source)), licensed under CC BY 3.0."
+    },
+    "wikidataId": "Q260725"
+  },
+  {
+    "id": "marta-vieira-da-silva",
+    "name": "Marta",
+    "category": "Football",
+    "aliases": [
+      "Marta Vieira da Silva"
+    ],
+    "facts": [
+      "Brazilian professional soccer player.",
+      "Named FIFA World Player of the Year a record six times.",
+      "Brazil's all-time leading goal scorer, men's or women's team.",
+      "The all-time leading goal scorer in Women's World Cup history."
+    ],
+    "revealFact": "She has scored more goals at the Women's World Cup than anyone else, ever.",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/NC_Courage_vs_Orlando_Pride_%28Jun_2024%29_073_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:NC_Courage_vs_Orlando_Pride_(Jun_2024)_073_(cropped).jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Hameltion via Wikimedia Commons (Own work), licensed under CC BY-SA 4.0."
+    },
+    "wikidataId": "Q228616"
+  },
+  {
+    "id": "roger-federer",
+    "name": "Roger Federer",
+    "category": "Athletes",
+    "aliases": [],
+    "facts": [
+      "Swiss former professional tennis player.",
+      "Won 20 Grand Slam singles titles.",
+      "Spent a record number of consecutive weeks ranked world number one.",
+      "Known for his elegant playing style and sportsmanship."
+    ],
+    "revealFact": "He once held the men's tennis world number one ranking for over four straight years.",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Federer_WM16_%2837%29_%2828136155830%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Federer_WM16_(37)_(28136155830).jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "si.robi via Wikimedia Commons ([1]), licensed under CC BY-SA 2.0."
+    },
+    "wikidataId": "Q1426"
+  },
+  {
+    "id": "katie-ledecky",
+    "name": "Katie Ledecky",
+    "category": "Athletes",
+    "aliases": [],
+    "facts": [
+      "American competitive swimmer.",
+      "One of the most decorated Olympic swimmers of all time.",
+      "Specializes in freestyle distance events.",
+      "Holds multiple long-course world records."
+    ],
+    "revealFact": "She holds world records across several long-distance freestyle swimming events.",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Katie_Ledecky_at_the_2023_Golden_Goggle_Awards_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Katie_Ledecky_at_the_2023_Golden_Goggle_Awards_(cropped).jpg",
+      "license": "CC0",
+      "attribution": "Mledecky via Wikimedia Commons (Own work), licensed under CC0."
+    },
+    "wikidataId": "Q137374"
   }
 ]
