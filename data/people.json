@@ -2,7 +2,7 @@
   {
     "id": "tom-hanks",
     "name": "Tom Hanks",
-    "category": "Actors",
+    "category": "TV & Film",
     "aliases": [],
     "facts": [
       "American actor and filmmaker born in 1956.",
@@ -22,7 +22,7 @@
   {
     "id": "meryl-streep",
     "name": "Meryl Streep",
-    "category": "Actors",
+    "category": "TV & Film",
     "aliases": [],
     "facts": [
       "American actress born in 1949.",
@@ -42,7 +42,7 @@
   {
     "id": "denzel-washington",
     "name": "Denzel Washington",
-    "category": "Actors",
+    "category": "TV & Film",
     "aliases": [],
     "facts": [
       "American actor and director born in 1954.",
@@ -62,7 +62,7 @@
   {
     "id": "leonardo-dicaprio",
     "name": "Leonardo DiCaprio",
-    "category": "Actors",
+    "category": "TV & Film",
     "aliases": [],
     "facts": [
       "American actor and environmental activist born in 1974.",
@@ -82,7 +82,7 @@
   {
     "id": "viola-davis",
     "name": "Viola Davis",
-    "category": "Actors",
+    "category": "TV & Film",
     "aliases": [],
     "facts": [
       "American actress born in 1965.",
@@ -102,7 +102,7 @@
   {
     "id": "morgan-freeman",
     "name": "Morgan Freeman",
-    "category": "Actors",
+    "category": "TV & Film",
     "aliases": [],
     "facts": [
       "American actor known for his distinctive deep voice, born in 1937.",
@@ -122,7 +122,7 @@
   {
     "id": "scarlett-johansson",
     "name": "Scarlett Johansson",
-    "category": "Actors",
+    "category": "TV & Film",
     "aliases": [],
     "facts": [
       "American actress born in 1984.",
@@ -142,7 +142,7 @@
   {
     "id": "will-smith",
     "name": "Will Smith",
-    "category": "Actors",
+    "category": "TV & Film",
     "aliases": [],
     "facts": [
       "American actor and rapper born in 1968.",
@@ -162,7 +162,7 @@
   {
     "id": "audrey-hepburn",
     "name": "Audrey Hepburn",
-    "category": "Actors",
+    "category": "TV & Film",
     "aliases": [],
     "facts": [
       "British actress and humanitarian, active mid-20th century.",
@@ -182,7 +182,7 @@
   {
     "id": "charlie-chaplin",
     "name": "Charlie Chaplin",
-    "category": "Actors",
+    "category": "TV & Film",
     "aliases": [],
     "facts": [
       "English actor and filmmaker famous for the silent film era.",
@@ -202,7 +202,7 @@
   {
     "id": "dwayne-johnson",
     "name": "Dwayne Johnson",
-    "category": "Actors",
+    "category": "TV & Film",
     "aliases": [
       "The Rock"
     ],
@@ -224,7 +224,7 @@
   {
     "id": "cate-blanchett",
     "name": "Cate Blanchett",
-    "category": "Actors",
+    "category": "TV & Film",
     "aliases": [],
     "facts": [
       "Australian actress born in 1969.",

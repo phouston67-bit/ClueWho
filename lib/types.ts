@@ -4,7 +4,7 @@
  */
 
 export const CATEGORIES = [
-  "Actors",
+  "TV & Film",
   "Musicians",
   "Athletes",
   "Football",

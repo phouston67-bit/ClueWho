@@ -10,7 +10,7 @@ Built with **Next.js 16 (App Router, TypeScript)**, **Tailwind CSS**, the
 
 ## How it works
 
-1. **Pick a category** (Actors, Musicians, Athletes, Football, Historical
+1. **Pick a category** (TV & Film, Musicians, Athletes, Football, Historical
    Figures, Scientists, Politicians, Business Leaders) or hit "Surprise me".
 2. The server (`POST /api/round/start`) secretly picks a person from
    `data/people.json` and returns only their **photo + category** - never

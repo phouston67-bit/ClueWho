@@ -3,7 +3,7 @@
 import { CATEGORIES } from "@/lib/types";
 
 const CATEGORY_EMOJI: Record<string, string> = {
-  Actors: "🎬",
+  "TV & Film": "🎬",
   Musicians: "🎤",
   Athletes: "🏅",
   Football: "⚽",
