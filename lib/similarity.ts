@@ -62,6 +62,11 @@ export function diceCoefficient(a: string, b: string): number {
   return (2 * intersectionSize) / (bigramsA.length + bigramsB.length);
 }
 
+/** Split a normalized name into words, dropping tiny connector words (e.g. "de", "van", "jr"). */
+function significantWords(normalized: string): string[] {
+  return normalized.split(" ").filter((word) => word.length >= 3);
+}
+
 /** Default similarity threshold above which a guess counts as "correct". */
 export const GUESS_MATCH_THRESHOLD = 0.72;
 
@@ -69,6 +74,15 @@ export const GUESS_MATCH_THRESHOLD = 0.72;
  * Returns true if `guess` is a close enough match to `name` (or one of
  * `aliases`) to be considered a correct guess. Short-circuits on an exact
  * normalized match or an unambiguous substring match for full names.
+ *
+ * Players very often answer with just a surname, a first name, a nickname,
+ * or a slightly misspelled version of one of those (e.g. "Henry" for
+ * "Thierry Henry", or "Mbape" for "Kylian Mbappé") rather than typing the
+ * full name exactly - the Dice coefficient over the *whole* name alone
+ * penalizes these short, correct answers because they're much shorter than
+ * the full string. To allow that license for spelling and partial-name
+ * answers, a guess is also accepted if it closely matches any single
+ * significant word of a multi-word name.
  */
 export function isGuessMatch(
   guess: string,
@@ -84,14 +98,27 @@ export function isGuessMatch(
     const normCandidate = normalize(candidate);
     if (!normCandidate) return false;
     if (normGuess === normCandidate) return true;
+
     // Reward a guess that is a full, unambiguous substring of a multi-word
     // name (e.g. guessing a well-known mononym or a close variant).
     if (
       normGuess.length >= 4 &&
       (normCandidate.includes(normGuess) || normGuess.includes(normCandidate))
     ) {
-      return diceCoefficient(normGuess, normCandidate) >= threshold - 0.15;
+      if (diceCoefficient(normGuess, normCandidate) >= threshold - 0.15) return true;
+    } else if (diceCoefficient(normGuess, normCandidate) >= threshold) {
+      return true;
     }
-    return diceCoefficient(normGuess, normCandidate) >= threshold;
+
+    // Accept a guess that closely matches any single significant word of
+    // the candidate name (first name, surname, etc.), typos included.
+    const candidateWords = significantWords(normCandidate);
+    if (normGuess.length >= 3 && candidateWords.length > 1) {
+      return candidateWords.some(
+        (word) => word === normGuess || diceCoefficient(normGuess, word) >= threshold
+      );
+    }
+
+    return false;
   });
 }
