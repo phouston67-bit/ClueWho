@@ -1,0 +1,1683 @@
+[
+  {
+    "id": "tom-hanks",
+    "name": "Tom Hanks",
+    "category": "Actors",
+    "aliases": [],
+    "facts": [
+      "American actor and filmmaker born in 1956.",
+      "Won back-to-back Best Actor Oscars for Philadelphia and Forrest Gump.",
+      "Starred in Cast Away, Saving Private Ryan, and Apollo 13.",
+      "Voiced the character Woody in Pixar's Toy Story franchise."
+    ],
+    "revealFact": "He has won two Academy Awards in a row for Best Actor.",
+    "wikidataId": "Q2263",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Tom_Hanks_at_the_Elvis_Premiere_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Tom_Hanks_at_the_Elvis_Premiere_2022.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Eva Rinaldi from Abbotsford, Australia via Wikimedia Commons (Baz Luhrmann, Eva Rinaldi (2), Olivia Dejonge, Austin Butler,Tom Hanks), licensed under CC BY-SA 2.0."
+    }
+  },
+  {
+    "id": "meryl-streep",
+    "name": "Meryl Streep",
+    "category": "Actors",
+    "aliases": [],
+    "facts": [
+      "American actress born in 1949.",
+      "Holds the record for the most Academy Award acting nominations.",
+      "Known for Sophie's Choice, The Devil Wears Prada, and Mamma Mia!.",
+      "Has won three Academy Awards across her career."
+    ],
+    "revealFact": "She has more Oscar nominations than any other actor in history.",
+    "wikidataId": "Q873",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Meryl_Streep-_Press_conference_for_the_film_%22The_Devil_Wears_Prada_2%22_-_55194765350_%28cropped1%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Meryl_Streep-_Press_conference_for_the_film_%22The_Devil_Wears_Prada_2%22_-_55194765350_(cropped1).jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Ministry of culture, sports and Tourism- Lee Jeong-woo via Wikimedia Commons (https://www.flickr.com/photos/koreanet/55194765350/), licensed under CC BY-SA 4.0."
+    }
+  },
+  {
+    "id": "denzel-washington",
+    "name": "Denzel Washington",
+    "category": "Actors",
+    "aliases": [],
+    "facts": [
+      "American actor and director born in 1954.",
+      "Won Best Supporting Actor for Glory and Best Actor for Training Day.",
+      "Known for Malcolm X, American Gangster, and Flight.",
+      "Frequently collaborates with director Spike Lee."
+    ],
+    "revealFact": "He has won two competitive Academy Awards for acting.",
+    "wikidataId": "Q42101",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Denzel_Washington_at_the_2025_Cannes_Film_Festival.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Denzel_Washington_at_the_2025_Cannes_Film_Festival.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Gabriel Hutchinson via Wikimedia Commons (Own work), licensed under CC BY-SA 4.0."
+    }
+  },
+  {
+    "id": "leonardo-dicaprio",
+    "name": "Leonardo DiCaprio",
+    "category": "Actors",
+    "aliases": [],
+    "facts": [
+      "American actor and environmental activist born in 1974.",
+      "Won his first competitive Oscar for The Revenant.",
+      "Starred in Titanic, Inception, and The Wolf of Wall Street.",
+      "Frequently collaborates with director Martin Scorsese."
+    ],
+    "revealFact": "It took him until his sixth nomination to finally win a competitive Oscar.",
+    "wikidataId": "Q38111",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Leonardo_DiCaprio_-_BFI_Southbank_3_%28crop%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Leonardo_DiCaprio_-_BFI_Southbank_3_(crop).jpg",
+      "license": "CC BY 4.0",
+      "attribution": "Raph_PH via Wikimedia Commons (https://www.flickr.com/photos/raph_ph/54940587404/), licensed under CC BY 4.0."
+    }
+  },
+  {
+    "id": "viola-davis",
+    "name": "Viola Davis",
+    "category": "Actors",
+    "aliases": [],
+    "facts": [
+      "American actress born in 1965.",
+      "First Black performer to achieve the 'Triple Crown of Acting' (Oscar, Emmy, Tony).",
+      "Won an Academy Award for her role in Fences.",
+      "Starred in The Help and the TV series How to Get Away with Murder."
+    ],
+    "revealFact": "She is the first Black actor to achieve the Triple Crown of Acting.",
+    "wikidataId": "Q229181",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/Viola_Davis_%2827983785894%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Viola_Davis_(27983785894)_(cropped).jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Gage Skidmore from Peoria, AZ, United States of America via Wikimedia Commons (Viola Davis), licensed under CC BY-SA 2.0."
+    }
+  },
+  {
+    "id": "morgan-freeman",
+    "name": "Morgan Freeman",
+    "category": "Actors",
+    "aliases": [],
+    "facts": [
+      "American actor known for his distinctive deep voice, born in 1937.",
+      "Won Best Supporting Actor for Million Dollar Baby.",
+      "Starred in The Shawshank Redemption and Seven.",
+      "Has narrated numerous documentaries and films."
+    ],
+    "revealFact": "His voice has narrated more documentaries than almost any other actor's.",
+    "wikidataId": "Q48337",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Academy_Award-winning_actor_Morgan_Freeman_narrates_for_the_opening_ceremony_%2826904746425%29_%28cropped%29_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Academy_Award-winning_actor_Morgan_Freeman_narrates_for_the_opening_ceremony_(26904746425)_(cropped)_3.jpg",
+      "license": "Public domain",
+      "attribution": "DoD News Features via Wikimedia Commons (160508-D-DB155-012), licensed under Public domain."
+    }
+  },
+  {
+    "id": "scarlett-johansson",
+    "name": "Scarlett Johansson",
+    "category": "Actors",
+    "aliases": [],
+    "facts": [
+      "American actress born in 1984.",
+      "Played Black Widow in the Marvel Cinematic Universe.",
+      "One of the highest-grossing box-office actresses of all time.",
+      "Starred in Lost in Translation and Marriage Story."
+    ],
+    "revealFact": "She played a Marvel superhero for over a decade across many films.",
+    "wikidataId": "Q34436",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Scarlett_Johansson-8588.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Scarlett_Johansson-8588.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Harald Krichel via Wikimedia Commons (Own work), licensed under CC BY-SA 4.0."
+    }
+  },
+  {
+    "id": "will-smith",
+    "name": "Will Smith",
+    "category": "Actors",
+    "aliases": [],
+    "facts": [
+      "American actor and rapper born in 1968.",
+      "Rose to fame on the sitcom The Fresh Prince of Bel-Air.",
+      "Starred in Men in Black, Independence Day, and Ali.",
+      "Won the Academy Award for Best Actor for King Richard."
+    ],
+    "revealFact": "He started his entertainment career as a rapper before acting.",
+    "wikidataId": "Q40096",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/Will_Smith_by_Gage_Skidmore_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Will_Smith_by_Gage_Skidmore_2.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Gage Skidmore via Wikimedia Commons (Own work), licensed under CC BY-SA 3.0."
+    }
+  },
+  {
+    "id": "audrey-hepburn",
+    "name": "Audrey Hepburn",
+    "category": "Actors",
+    "aliases": [],
+    "facts": [
+      "British actress and humanitarian, active mid-20th century.",
+      "Starred in Roman Holiday and Breakfast at Tiffany's.",
+      "Won the Academy Award for Best Actress for Roman Holiday.",
+      "Later became a dedicated UNICEF goodwill ambassador."
+    ],
+    "revealFact": "In her later years she devoted herself to UNICEF humanitarian work.",
+    "wikidataId": "Q42786",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Audrey_Hepburn_in_1966.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Audrey_Hepburn_in_1966.jpg",
+      "license": "CC BY-SA 3.0 nl",
+      "attribution": "Anefo via Wikimedia Commons (http://proxy.handle.net/10648/aafcd52a-d0b4-102d-bcf8-003048976d84), licensed under CC BY-SA 3.0 nl."
+    }
+  },
+  {
+    "id": "charlie-chaplin",
+    "name": "Charlie Chaplin",
+    "category": "Actors",
+    "aliases": [],
+    "facts": [
+      "English actor and filmmaker famous for the silent film era.",
+      "Created the iconic 'Tramp' character.",
+      "Wrote, directed, produced, and scored most of his own films.",
+      "Received an Honorary Academy Award for his contributions to film."
+    ],
+    "revealFact": "He created one of the most recognizable characters of the silent-film era.",
+    "wikidataId": "Q882",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/Charlie_Chaplin_portrait_Getty_1739411952.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Charlie_Chaplin_portrait_Getty_1739411952.jpg",
+      "license": "Public domain",
+      "attribution": "Strauss-Peyton Studio via Wikimedia Commons (Original publication: Magazine Photoplay No. 3, 1922Immediate sources: this imagealso found at National Portrait Gallery), licensed under Public domain."
+    }
+  },
+  {
+    "id": "dwayne-johnson",
+    "name": "Dwayne Johnson",
+    "category": "Actors",
+    "aliases": [
+      "The Rock"
+    ],
+    "facts": [
+      "American actor and former professional wrestler born in 1972.",
+      "Known by the ring name 'The Rock' before his acting career.",
+      "Stars in the Fast & Furious and Jumanji franchises.",
+      "One of the highest-paid actors in the world."
+    ],
+    "revealFact": "Before acting, he was a famous professional wrestler.",
+    "wikidataId": "Q10738",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Dwayne_Johnson-1809_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Dwayne_Johnson-1809_(cropped).jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Harald Krichel via Wikimedia Commons (Own work), licensed under CC BY-SA 4.0."
+    }
+  },
+  {
+    "id": "cate-blanchett",
+    "name": "Cate Blanchett",
+    "category": "Actors",
+    "aliases": [],
+    "facts": [
+      "Australian actress born in 1969.",
+      "Won Academy Awards for The Aviator and Blue Jasmine.",
+      "Played the elf queen Galadriel in The Lord of the Rings trilogy.",
+      "Known for a wide range of roles across film and theater."
+    ],
+    "revealFact": "She played an elven queen in a famous fantasy film trilogy.",
+    "wikidataId": "Q80966",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Cate_Blanchett-63298_%28cropped_2%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cate_Blanchett-63298_(cropped_2).jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Harald Krichel via Wikimedia Commons (Own work), licensed under CC BY-SA 4.0."
+    }
+  },
+  {
+    "id": "beyonce",
+    "name": "Beyoncé",
+    "category": "Musicians",
+    "aliases": [],
+    "facts": [
+      "American singer born in 1981.",
+      "Rose to fame as a member of the group Destiny's Child.",
+      "One of the best-selling music artists of all time.",
+      "Known for albums like Lemonade and Renaissance."
+    ],
+    "revealFact": "She first became famous as part of an R&B girl group.",
+    "wikidataId": "Q36153",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Beyonc%C3%A9_-_Tottenham_Hotspur_Stadium_-_1st_June_2023_%2810_of_118%29_%2852946364598%29_%28best_crop%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Beyonc%C3%A9_-_Tottenham_Hotspur_Stadium_-_1st_June_2023_(10_of_118)_(52946364598)_(best_crop).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Raph_PH via Wikimedia Commons (BeyonceSpurs010623 (10 of 118)), licensed under CC BY 2.0."
+    }
+  },
+  {
+    "id": "elvis-presley",
+    "name": "Elvis Presley",
+    "category": "Musicians",
+    "aliases": [],
+    "facts": [
+      "American singer known as the 'King of Rock and Roll'.",
+      "Active primarily from the 1950s through the 1970s.",
+      "Starred in numerous Hollywood films alongside his music career.",
+      "Remains one of the best-selling solo music artists of all time."
+    ],
+    "revealFact": "He earned the nickname 'The King of Rock and Roll'.",
+    "wikidataId": "Q303",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Elvis_Presley_1973_RCA_Records_and_Tapes_publicity_2_-_cropped.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Elvis_Presley_1973_RCA_Records_and_Tapes_publicity_2_-_cropped.png",
+      "license": "Public domain",
+      "attribution": "RCA Records via Wikimedia Commons (This file was derived from:  Elvis Presley 1973 RCA Records and Tapes publicity 2.png: \n\n\n\n\n\n\nThis  is a retouched picture, which means that it has been digitally altered from its original version. Modifications: Picture cropped. The original can be viewed here: Elvis Presley 1973 RCA Records and Tapes publicity 2.png: . Modifications made by GDuwen.), licensed under Public domain."
+    }
+  },
+  {
+    "id": "freddie-mercury",
+    "name": "Freddie Mercury",
+    "category": "Musicians",
+    "aliases": [],
+    "facts": [
+      "British singer and lead vocalist of the rock band Queen.",
+      "Known for a powerful, wide vocal range.",
+      "Co-wrote hits including 'Bohemian Rhapsody'.",
+      "Delivered a legendary performance at Live Aid in 1985."
+    ],
+    "revealFact": "He fronted one of the most famous rock bands in history.",
+    "wikidataId": "Q15869",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Freddie_Mercury_performing_in_New_Haven%2C_CT%2C_November_1977.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Freddie_Mercury_performing_in_New_Haven,_CT,_November_1977.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Carl Lender via Wikimedia Commons (Queen - Freddie Mercury), licensed under CC BY-SA 3.0."
+    }
+  },
+  {
+    "id": "taylor-swift",
+    "name": "Taylor Swift",
+    "category": "Musicians",
+    "aliases": [],
+    "facts": [
+      "American singer-songwriter born in 1989.",
+      "Known for narrative, autobiographical songwriting.",
+      "Has won Album of the Year at the Grammys multiple times.",
+      "Her Eras Tour became one of the highest-grossing tours ever."
+    ],
+    "revealFact": "One of her concert tours became the highest-grossing of all time.",
+    "wikidataId": "Q26876",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_%283%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_(3).png",
+      "license": "CC BY 3.0",
+      "attribution": "iHeartRadioCA via Wikimedia Commons (YouTube: #taylorswift on the #vmas pink carpet – View/save archived versions on archive.org(See specific archived version)), licensed under CC BY 3.0."
+    }
+  },
+  {
+    "id": "bob-dylan",
+    "name": "Bob Dylan",
+    "category": "Musicians",
+    "aliases": [],
+    "facts": [
+      "American singer-songwriter born in 1941.",
+      "Known for protest songs like 'Blowin' in the Wind'.",
+      "Won the Nobel Prize in Literature in 2016.",
+      "A central figure of the 1960s folk revival."
+    ],
+    "revealFact": "He is one of the only songwriters to win a Nobel Prize in Literature.",
+    "wikidataId": "Q392",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/DylanYoungKilkenny140719v2_%2850_of_52%29_%2852246124397%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:DylanYoungKilkenny140719v2_(50_of_52)_(52246124397)_(cropped).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Raph_PH via Wikimedia Commons (DylanYoungKilkenny140719v2 (50 of 52)), licensed under CC BY 2.0."
+    }
+  },
+  {
+    "id": "whitney-houston",
+    "name": "Whitney Houston",
+    "category": "Musicians",
+    "aliases": [],
+    "facts": [
+      "American singer and actress active from the 1980s onward.",
+      "One of the best-selling music artists in history.",
+      "Starred in the film The Bodyguard and sang its famous soundtrack.",
+      "Known for her powerful vocal range."
+    ],
+    "revealFact": "She starred in a hit film and sang its iconic soundtrack single.",
+    "wikidataId": "Q34389",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/Whitney_Houston_%28cropped3%29.JPEG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Whitney_Houston_(cropped3).JPEG",
+      "license": "Public domain",
+      "attribution": "PH2 Mark Kettenhofen via Wikimedia Commons (DefenseImagery), licensed under Public domain."
+    }
+  },
+  {
+    "id": "michael-jackson",
+    "name": "Michael Jackson",
+    "category": "Musicians",
+    "aliases": [],
+    "facts": [
+      "American singer known as the 'King of Pop'.",
+      "His album Thriller is the best-selling album of all time.",
+      "Known for pioneering music videos and dance moves like the moonwalk.",
+      "Began his career as a child performer with his brothers."
+    ],
+    "revealFact": "He is known for popularizing a dance move called the moonwalk.",
+    "wikidataId": "Q2831",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Michael_Jackson_1983_%283x4_cropped%29_%28contrast%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Michael_Jackson_1983_(3x4_cropped)_(contrast).jpg",
+      "license": "Public domain",
+      "attribution": "Matthew Rolston; Distributed by Epic Records via Wikimedia Commons (Worthpoint  Immediate from iHeart), licensed under Public domain."
+    }
+  },
+  {
+    "id": "adele",
+    "name": "Adele",
+    "category": "Musicians",
+    "aliases": [],
+    "facts": [
+      "British singer-songwriter born in 1988.",
+      "Known for emotional ballads like 'Someone Like You'.",
+      "Has won multiple Grammy Awards for Album of the Year.",
+      "Her albums are often named after her age at the time of writing."
+    ],
+    "revealFact": "Several of her albums are titled after numbers tied to her age.",
+    "wikidataId": "Q23215",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Adele_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Adele_2016.jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Marc E. via Wikimedia Commons (Adele 3), licensed under CC BY 2.0."
+    }
+  },
+  {
+    "id": "david-bowie",
+    "name": "David Bowie",
+    "category": "Musicians",
+    "aliases": [],
+    "facts": [
+      "British singer known for constant musical reinvention.",
+      "Created the alter-ego persona Ziggy Stardust.",
+      "Active across rock, glam, and electronic genres for decades.",
+      "Known for the hit songs 'Space Oddity' and 'Heroes'."
+    ],
+    "revealFact": "He created a famous alien rock-star alter ego named Ziggy Stardust.",
+    "wikidataId": "Q5383",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/David-Bowie_Chicago_2002-08-08_photoby_Adam-Bielawski-cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:David-Bowie_Chicago_2002-08-08_photoby_Adam-Bielawski-cropped.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Adam Bielawski via Wikimedia Commons (Own work), licensed under CC BY-SA 3.0."
+    }
+  },
+  {
+    "id": "stevie-wonder",
+    "name": "Stevie Wonder",
+    "category": "Musicians",
+    "aliases": [],
+    "facts": [
+      "American singer-songwriter and multi-instrumentalist.",
+      "Blind since shortly after birth.",
+      "Has won 25 Grammy Awards across his career.",
+      "Known for hits like 'Superstition' and 'Isn't She Lovely'."
+    ],
+    "revealFact": "He has been blind since shortly after he was born.",
+    "wikidataId": "Q714",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Stevie_Wonder_1994.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Stevie_Wonder_1994.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Kingkongphoto &amp; www.celebrity-photos.com from Laurel  Maryland, USA via Wikimedia Commons (Stevie Wonder), licensed under CC BY-SA 2.0."
+    }
+  },
+  {
+    "id": "madonna",
+    "name": "Madonna",
+    "category": "Musicians",
+    "aliases": [],
+    "facts": [
+      "American singer known as the 'Queen of Pop'.",
+      "Rose to fame in the 1980s with hits like 'Like a Virgin'.",
+      "One of the best-selling music artists of all time.",
+      "Known for frequently reinventing her image and sound."
+    ],
+    "revealFact": "She is widely known by the nickname 'Queen of Pop'.",
+    "wikidataId": "Q1744",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/MadonnaO2171023_%2897_of_133%29_%2853269593787%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:MadonnaO2171023_(97_of_133)_(53269593787)_(cropped).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Raph_PH via Wikimedia Commons (MadonnaO2171023 (97 of 133)), licensed under CC BY 2.0."
+    }
+  },
+  {
+    "id": "prince",
+    "name": "Prince",
+    "category": "Musicians",
+    "aliases": [],
+    "facts": [
+      "American singer and multi-instrumentalist.",
+      "Known for the album and film Purple Rain.",
+      "Blended rock, funk, pop, and R&B influences.",
+      "Famous for his flamboyant stage persona and guitar skill."
+    ],
+    "revealFact": "A famous purple-themed album and film share his best-known nickname's color.",
+    "wikidataId": "Q7542",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Prince_Brussels_1986_%28retouched%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Prince_Brussels_1986_(retouched).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Yves Lorson via Wikimedia Commons (https://www.flickr.com/photos/29572161@N00/182644791/), licensed under CC BY 2.0."
+    }
+  },
+  {
+    "id": "michael-jordan",
+    "name": "Michael Jordan",
+    "category": "Athletes",
+    "aliases": [],
+    "facts": [
+      "American former professional basketball player.",
+      "Won six NBA championships with the Chicago Bulls.",
+      "Widely regarded as one of the greatest basketball players ever.",
+      "Later became the majority owner of the Charlotte Hornets."
+    ],
+    "revealFact": "He won six NBA titles, all with the same franchise.",
+    "wikidataId": "Q41421",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/Michael_Jordan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Michael_Jordan.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Joshua Massel.  Cropped by en:User:Quadzilla99 via Wikimedia Commons (original flickr source,), licensed under CC BY-SA 2.0."
+    }
+  },
+  {
+    "id": "serena-williams",
+    "name": "Serena Williams",
+    "category": "Athletes",
+    "aliases": [],
+    "facts": [
+      "American former professional tennis player.",
+      "Won 23 Grand Slam singles titles.",
+      "Also won multiple Olympic gold medals in doubles.",
+      "Known for a dominant serve and competitive longevity."
+    ],
+    "revealFact": "She won 23 Grand Slam singles titles across her career.",
+    "wikidataId": "Q11459",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Serena_Williams_at_2013_US_Open.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Serena_Williams_at_2013_US_Open.jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Edwin Martinez via Wikimedia Commons (https://www.flickr.com/photos/rhythmstrip/9630755847/), licensed under CC BY 2.0."
+    }
+  },
+  {
+    "id": "usain-bolt",
+    "name": "Usain Bolt",
+    "category": "Athletes",
+    "aliases": [],
+    "facts": [
+      "Jamaican former professional sprinter.",
+      "Holds the world records in both the 100m and 200m.",
+      "Won eight Olympic gold medals.",
+      "Nicknamed 'Lightning Bolt' for his speed."
+    ],
+    "revealFact": "He still holds the world records in both the 100m and 200m sprints.",
+    "wikidataId": "Q1189",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Usain_Bolt_Rio_100m_final_2016k.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Usain_Bolt_Rio_100m_final_2016k.jpg",
+      "license": "CC BY 3.0 br",
+      "attribution": "Fernando Frazão/Agência Brasil via Wikimedia Commons ([1] [2]), licensed under CC BY 3.0 br."
+    }
+  },
+  {
+    "id": "lionel-messi",
+    "name": "Lionel Messi",
+    "category": "Athletes",
+    "aliases": [],
+    "facts": [
+      "Argentine professional footballer.",
+      "Won the FIFA World Cup with Argentina in 2022.",
+      "Has won a record number of Ballon d'Or awards.",
+      "Spent most of his career at FC Barcelona before Inter Miami."
+    ],
+    "revealFact": "He finally won a World Cup title late in his career, in 2022.",
+    "wikidataId": "Q615",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Leo_Messi_Argentina_v_Egypt_7_July_2026-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Leo_Messi_Argentina_v_Egypt_7_July_2026-1.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Bryan Berlin via Wikimedia Commons (Own work), licensed under CC BY-SA 4.0."
+    }
+  },
+  {
+    "id": "cristiano-ronaldo",
+    "name": "Cristiano Ronaldo",
+    "category": "Athletes",
+    "aliases": [],
+    "facts": [
+      "Portuguese professional footballer.",
+      "One of the all-time top goal scorers in football history.",
+      "Has played for Manchester United, Real Madrid, and Juventus.",
+      "Known for his rivalry with Lionel Messi."
+    ],
+    "revealFact": "He has a famous long-running rivalry with another Argentine footballer.",
+    "wikidataId": "Q11571",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/2/26/Cristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_(cropped).jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Bryan Berlin via Wikimedia Commons (Own work), licensed under CC BY-SA 4.0."
+    }
+  },
+  {
+    "id": "muhammad-ali",
+    "name": "Muhammad Ali",
+    "category": "Athletes",
+    "aliases": [],
+    "facts": [
+      "American former professional boxer.",
+      "Three-time world heavyweight boxing champion.",
+      "Known for the phrase 'float like a butterfly, sting like a bee'.",
+      "An outspoken activist outside the ring."
+    ],
+    "revealFact": "He famously described his fighting style as floating like a butterfly.",
+    "wikidataId": "Q36107",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Muhammad_Ali_NYWTS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Muhammad_Ali_NYWTS.jpg",
+      "license": "Public domain",
+      "attribution": "Ira Rosenberg via Wikimedia Commons (This image  is available from the United States Library of Congress's Prints and Photographs division under the digital ID cph.3c15435.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.), licensed under Public domain."
+    }
+  },
+  {
+    "id": "simone-biles",
+    "name": "Simone Biles",
+    "category": "Athletes",
+    "aliases": [],
+    "facts": [
+      "American professional gymnast.",
+      "Most decorated gymnast in World Championship history.",
+      "Has several gymnastics skills named after her.",
+      "Won multiple Olympic gold medals for Team USA."
+    ],
+    "revealFact": "Several difficult gymnastics skills are officially named after her.",
+    "wikidataId": "Q7520267",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Simone_Biles_National_Team_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Simone_Biles_National_Team_2024.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Ocoudis via Wikimedia Commons (Own work), licensed under CC BY-SA 4.0."
+    }
+  },
+  {
+    "id": "lebron-james",
+    "name": "LeBron James",
+    "category": "Athletes",
+    "aliases": [],
+    "facts": [
+      "American professional basketball player.",
+      "The NBA's all-time leading regular-season scorer.",
+      "Has won multiple NBA championships with different teams.",
+      "Also a prominent businessman and philanthropist."
+    ],
+    "revealFact": "He holds the all-time scoring record in his professional league.",
+    "wikidataId": "Q36159",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/LeBron_James_%2851959977144%29_%28cropped2%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:LeBron_James_(51959977144)_(cropped2).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Erik Drost via Wikimedia Commons (https://www.flickr.com/photos/edrost88/51959977144/), licensed under CC BY 2.0."
+    }
+  },
+  {
+    "id": "tiger-woods",
+    "name": "Tiger Woods",
+    "category": "Athletes",
+    "aliases": [],
+    "facts": [
+      "American professional golfer.",
+      "Has won 15 major golf championships.",
+      "Spent a record number of weeks ranked world number one.",
+      "Known for his dominant early-2000s run in the sport."
+    ],
+    "revealFact": "He spent more weeks ranked world number one than any other golfer.",
+    "wikidataId": "Q10993",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tiger_Woods_in_May_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Tiger_Woods_in_May_2019.jpg",
+      "license": "Public domain",
+      "attribution": "The White House from Washington, DC via Wikimedia Commons (President Trump Presents the Medal of Freedom to Tiger Woods), licensed under Public domain."
+    }
+  },
+  {
+    "id": "babe-ruth",
+    "name": "Babe Ruth",
+    "category": "Athletes",
+    "aliases": [],
+    "facts": [
+      "American professional baseball player, active early 20th century.",
+      "Legendary slugger for the New York Yankees.",
+      "Nicknamed 'The Sultan of Swat' for his home-run power.",
+      "Helped popularize baseball as America's pastime."
+    ],
+    "revealFact": "He earned the nickname 'The Sultan of Swat'.",
+    "wikidataId": "Q213812",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Babe_Ruth%2C_1933.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Babe_Ruth,_1933.jpg",
+      "license": "Public domain",
+      "attribution": "Charles M. Conlon via Wikimedia Commons (https://www.ebay.com/itm/BABE-RUTH-1933-YANKEES-CONLON-BASEBALL-POSTER-22-X-28-OFFICIALLY-LICENSED-/223259724073), licensed under Public domain."
+    }
+  },
+  {
+    "id": "pele",
+    "name": "Pelé",
+    "category": "Athletes",
+    "aliases": [],
+    "facts": [
+      "Brazilian former professional footballer.",
+      "Won three FIFA World Cups with Brazil.",
+      "Widely regarded as one of the greatest footballers ever.",
+      "Scored over 1,000 career goals."
+    ],
+    "revealFact": "He is the only player to win three World Cups.",
+    "wikidataId": "Q12897",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Pele_con_brasil_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Pele_con_brasil_(cropped).jpg",
+      "license": "Public domain",
+      "attribution": "Unknown authorUnknown author via Wikimedia Commons (El Gráfico), licensed under Public domain."
+    }
+  },
+  {
+    "id": "michael-phelps",
+    "name": "Michael Phelps",
+    "category": "Athletes",
+    "aliases": [],
+    "facts": [
+      "American former competitive swimmer.",
+      "The most decorated Olympian of all time with 28 medals.",
+      "Won 23 Olympic gold medals across his career.",
+      "Set numerous world records in multiple swimming strokes."
+    ],
+    "revealFact": "He is the most decorated Olympic athlete in history.",
+    "wikidataId": "Q39562",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Michael_Phelps_August_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Michael_Phelps_August_2016.jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Agência Brasil Fotografias via Wikimedia Commons (MICHAEL PHELPS E KATIE LEDECKY CONCEDEM ENTREVISTAS NO PARQUE OLÍMPICO), licensed under CC BY 2.0."
+    }
+  },
+  {
+    "id": "abraham-lincoln",
+    "name": "Abraham Lincoln",
+    "category": "Historical Figures",
+    "aliases": [],
+    "facts": [
+      "16th President of the United States.",
+      "Led the country through the American Civil War.",
+      "Signed the Emancipation Proclamation in 1863.",
+      "Assassinated in 1865 shortly after the war's end."
+    ],
+    "revealFact": "He signed a proclamation that declared enslaved people in rebelling states free.",
+    "wikidataId": "Q91",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Abraham_Lincoln_O-77_matte_collodion_print.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Abraham_Lincoln_O-77_matte_collodion_print.jpg",
+      "license": "Public domain",
+      "attribution": "Alexander Gardner via Wikimedia Commons (museums.fivecolleges.edu), licensed under Public domain."
+    }
+  },
+  {
+    "id": "cleopatra",
+    "name": "Cleopatra",
+    "category": "Historical Figures",
+    "aliases": [],
+    "facts": [
+      "Last active ruler of the Ptolemaic Kingdom of Egypt.",
+      "Formed political and romantic alliances with Roman leaders.",
+      "Known for her intelligence and political acumen.",
+      "Her death in 30 BC marked the end of ancient Egyptian independence."
+    ],
+    "revealFact": "Her death is traditionally marked as the end of ancient Egypt's independence.",
+    "wikidataId": "Q18002300",
+    "image": {
+      "commonsFileUrl": "TODO: run `npm run seed` to resolve a licensed Wikimedia Commons image",
+      "license": "TODO",
+      "attribution": "TODO"
+    }
+  },
+  {
+    "id": "julius-caesar",
+    "name": "Julius Caesar",
+    "category": "Historical Figures",
+    "aliases": [],
+    "facts": [
+      "Roman general and statesman.",
+      "Played a critical role in the fall of the Roman Republic.",
+      "Led successful military campaigns across Gaul.",
+      "Assassinated by senators in 44 BC."
+    ],
+    "revealFact": "He was assassinated by a group of Roman senators.",
+    "wikidataId": "Q1048",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/Retrato_de_Julio_C%C3%A9sar_%2826724093101%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Retrato_de_Julio_C%C3%A9sar_(26724093101)_(cropped).jpg",
+      "license": "Public domain",
+      "attribution": "Ángel M. Felicísimo from Mérida, España via Wikimedia Commons (Retrato de Julio César), licensed under Public domain."
+    }
+  },
+  {
+    "id": "joan-of-arc",
+    "name": "Joan of Arc",
+    "category": "Historical Figures",
+    "aliases": [],
+    "facts": [
+      "French peasant girl who became a military leader.",
+      "Led French forces to several victories during the Hundred Years' War.",
+      "Claimed to receive visions guiding her mission.",
+      "Captured and executed in 1431; later canonized a saint."
+    ],
+    "revealFact": "She was later canonized as a Catholic saint.",
+    "wikidataId": "Q7226",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Joan_of_Arc_miniature_graded.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Joan_of_Arc_miniature_graded.jpg",
+      "license": "Public domain",
+      "attribution": "Unknown author via Wikimedia Commons (Derived from original commons upload at which is now in the history version: 01:39, 13. 8. 2005\n\nColour-graded to reveal more detail using GIMP software \"curves\" tool), licensed under Public domain."
+    }
+  },
+  {
+    "id": "mahatma-gandhi",
+    "name": "Mahatma Gandhi",
+    "category": "Historical Figures",
+    "aliases": [],
+    "facts": [
+      "Indian lawyer and political leader.",
+      "Led India's independence movement from British rule.",
+      "Advocated nonviolent civil disobedience.",
+      "Assassinated in 1948 shortly after independence."
+    ],
+    "revealFact": "He led a famous nonviolent independence movement.",
+    "wikidataId": "Q1001",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Mahatma-Gandhi,_studio,_1931.jpg",
+      "license": "Public domain",
+      "attribution": "Elliott &amp; Fry via Wikimedia Commons (philogalichet.fr (context)), licensed under Public domain."
+    }
+  },
+  {
+    "id": "martin-luther-king-jr",
+    "name": "Martin Luther King Jr.",
+    "category": "Historical Figures",
+    "aliases": [],
+    "facts": [
+      "American Baptist minister and civil rights leader.",
+      "Led the American civil rights movement of the 1950s-60s.",
+      "Delivered the famous 'I Have a Dream' speech in 1963.",
+      "Assassinated in 1968 in Memphis, Tennessee."
+    ],
+    "revealFact": "He delivered a famous speech beginning 'I Have a Dream'.",
+    "wikidataId": "Q8027",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/The_Rev._Dr._Martin_Luther_King_Jr._Color_Portrait_%28high_quality%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_Rev._Dr._Martin_Luther_King_Jr._Color_Portrait_(high_quality).jpg",
+      "license": "Public domain",
+      "attribution": "Associated Press via Wikimedia Commons (Sepia June 1968), licensed under Public domain."
+    }
+  },
+  {
+    "id": "nelson-mandela",
+    "name": "Nelson Mandela",
+    "category": "Historical Figures",
+    "aliases": [],
+    "facts": [
+      "South African anti-apartheid revolutionary and politician.",
+      "Imprisoned for 27 years for his activism.",
+      "Became South Africa's first Black president in 1994.",
+      "Won the Nobel Peace Prize in 1993."
+    ],
+    "revealFact": "He spent 27 years in prison before becoming his country's president.",
+    "wikidataId": "Q8023",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Nelson_Mandela_1994.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Nelson_Mandela_1994.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Kingkongphoto &amp; www.celebrity-photos.com from Laurel via Wikimedia Commons (Flickr: NELSON MANDELA), licensed under CC BY-SA 2.0."
+    }
+  },
+  {
+    "id": "genghis-khan",
+    "name": "Genghis Khan",
+    "category": "Historical Figures",
+    "aliases": [],
+    "facts": [
+      "Founder and first Great Khan of the Mongol Empire.",
+      "United the Mongol tribes in the early 13th century.",
+      "Built the largest contiguous land empire in history.",
+      "Known for both military conquest and administrative reforms."
+    ],
+    "revealFact": "He founded the largest contiguous land empire ever recorded.",
+    "wikidataId": "Q720",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/YuanEmperorAlbumGenghisPortrait.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:YuanEmperorAlbumGenghisPortrait.jpg",
+      "license": "Public domain",
+      "attribution": "Unknown authorUnknown author via Wikimedia Commons (Digitized by National Palace Museum; file is directly from Shuge), licensed under Public domain."
+    }
+  },
+  {
+    "id": "elizabeth-i",
+    "name": "Queen Elizabeth I",
+    "category": "Historical Figures",
+    "aliases": [],
+    "facts": [
+      "Queen of England during the Elizabethan era.",
+      "Reigned from 1558 to 1603.",
+      "Oversaw the defeat of the Spanish Armada in 1588.",
+      "Never married, earning the nickname 'The Virgin Queen'."
+    ],
+    "revealFact": "She was nicknamed 'The Virgin Queen' because she never married.",
+    "wikidataId": "Q7207",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/af/Darnley_stage_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Darnley_stage_3.jpg",
+      "license": "Public domain",
+      "attribution": "Unidentified painter via Wikimedia Commons (one or more third parties have made copyright claims against Wikimedia Commons in relation to the work from which this is sourced or a purely mechanical reproduction thereof. This may be due to recognition of the \"sweat of the brow\" doctrine, allowing works to be eligible for protection through skill and labour, and not purely by originality as is the case in the United States (where this website is hosted). These claims may or may not be valid in all jurisdictions.\nAs such, use of this image in the jurisdiction of the claimant or other countries may be regarded as copyright infringement. Please see Commons:When to use the PD-Art tag for more information.), licensed under Public domain."
+    }
+  },
+  {
+    "id": "george-washington",
+    "name": "George Washington",
+    "category": "Historical Figures",
+    "aliases": [],
+    "facts": [
+      "First President of the United States.",
+      "Commanded the Continental Army during the American Revolution.",
+      "Presided over the Constitutional Convention in 1787.",
+      "Voluntarily stepped down after two terms as president."
+    ],
+    "revealFact": "He voluntarily gave up power after serving two presidential terms.",
+    "wikidataId": "Q23",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg",
+      "license": "Public domain",
+      "attribution": "Gilbert Stuart via Wikimedia Commons (https://www.clarkart.edu/ArtPiece/Detail/George-Washington), licensed under Public domain."
+    }
+  },
+  {
+    "id": "napoleon-bonaparte",
+    "name": "Napoleon Bonaparte",
+    "category": "Historical Figures",
+    "aliases": [],
+    "facts": [
+      "French military leader and later Emperor of the French.",
+      "Rose to power during the French Revolution.",
+      "Conquered much of continental Europe in the early 1800s.",
+      "Exiled to the island of Elba, and later to Saint Helena."
+    ],
+    "revealFact": "He was eventually exiled to a remote island after his defeat.",
+    "wikidataId": "Q517",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/50/Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg",
+      "license": "Public domain",
+      "attribution": "Jacques-Louis David via Wikimedia Commons (zQEbF0AA9NhCXQ at Google Cultural Institute maximum zoom level), licensed under Public domain."
+    }
+  },
+  {
+    "id": "rosa-parks",
+    "name": "Rosa Parks",
+    "category": "Historical Figures",
+    "aliases": [],
+    "facts": [
+      "American civil rights activist.",
+      "Refused to give up her bus seat to a white passenger in 1955.",
+      "Her arrest sparked the Montgomery Bus Boycott.",
+      "Became known as 'the mother of the civil rights movement'."
+    ],
+    "revealFact": "Her refusal to give up a bus seat sparked a famous year-long boycott.",
+    "wikidataId": "Q41921",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Rosa_Parks_being_fingerprinted_by_Deputy_Sheriff_D.H._Lackey_after_being_arrested_on_February_22%2C_1956%2C_during_the_Montgomery_bus_boycott.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Rosa_Parks_being_fingerprinted_by_Deputy_Sheriff_D.H._Lackey_after_being_arrested_on_February_22,_1956,_during_the_Montgomery_bus_boycott.jpg",
+      "license": "Public domain",
+      "attribution": "Gene Herrick for the Associated Press; restored by Adam Cuerden via Wikimedia Commons (https://collections.si.edu/search/detail/edanmdm:npg_NPG.2013.76?q=record_ID%3Dnpg_NPG.2013.76), licensed under Public domain."
+    }
+  },
+  {
+    "id": "albert-einstein",
+    "name": "Albert Einstein",
+    "category": "Scientists",
+    "aliases": [],
+    "facts": [
+      "German-born theoretical physicist.",
+      "Developed the theory of relativity.",
+      "Won the Nobel Prize in Physics in 1921.",
+      "Famous for the equation E = mc^2."
+    ],
+    "revealFact": "He is famous for the equation E = mc^2.",
+    "wikidataId": "Q937",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Einstein_1921_by_F_Schmutzer_-_restoration.jpg",
+      "license": "Public domain",
+      "attribution": "Ferdinand Schmutzer / Adam Cuerden via Wikimedia Commons (http://www.bhm.ch/de/news_04a.cfm?bid=4&amp;jahr=2006 [dead link], archived copy (image)), licensed under Public domain."
+    }
+  },
+  {
+    "id": "marie-curie",
+    "name": "Marie Curie",
+    "category": "Scientists",
+    "aliases": [],
+    "facts": [
+      "Polish-French physicist and chemist.",
+      "First person to win Nobel Prizes in two different sciences.",
+      "Pioneered research on radioactivity.",
+      "Discovered the elements polonium and radium."
+    ],
+    "revealFact": "She discovered two chemical elements, one named after her homeland.",
+    "wikidataId": "Q7186",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/Marie_Curie_%281900%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Marie_Curie_(1900)_(cropped).jpg",
+      "license": "Public domain",
+      "attribution": "Unknown authorUnknown author via Wikimedia Commons (http://jasminkellner.com/wp-content/uploads/2015/03/Marie-Curie.jpg), licensed under Public domain."
+    }
+  },
+  {
+    "id": "isaac-newton",
+    "name": "Isaac Newton",
+    "category": "Scientists",
+    "aliases": [],
+    "facts": [
+      "English physicist and mathematician.",
+      "Formulated the laws of motion and universal gravitation.",
+      "Co-developed calculus independently of Leibniz.",
+      "Wrote the influential Philosophiae Naturalis Principia Mathematica."
+    ],
+    "revealFact": "A falling apple is famously (if apocryphally) linked to his biggest discovery.",
+    "wikidataId": "Q935",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/3/39/GodfreyKneller-IsaacNewton-1689.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:GodfreyKneller-IsaacNewton-1689.jpg",
+      "license": "Public domain",
+      "attribution": "Godfrey Kneller via Wikimedia Commons (http://www.newton.cam.ac.uk/art/portrait.html), licensed under Public domain."
+    }
+  },
+  {
+    "id": "charles-darwin",
+    "name": "Charles Darwin",
+    "category": "Scientists",
+    "aliases": [],
+    "facts": [
+      "English naturalist and biologist.",
+      "Proposed the theory of evolution by natural selection.",
+      "Traveled the world aboard the HMS Beagle.",
+      "Published his famous theory in On the Origin of Species."
+    ],
+    "revealFact": "He developed his famous theory partly from observations made on a long sea voyage.",
+    "wikidataId": "Q1035",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Charles_Darwin_portrait.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Charles_Darwin_portrait.jpg",
+      "license": "Public domain",
+      "attribution": "Herbert Rose Barraud via Wikimedia Commons (https://www.taringa.net/+info/charles-darwin-argentina-fue-y-sera-una_136c2o), licensed under Public domain."
+    }
+  },
+  {
+    "id": "stephen-hawking",
+    "name": "Stephen Hawking",
+    "category": "Scientists",
+    "aliases": [],
+    "facts": [
+      "British theoretical physicist and cosmologist.",
+      "Known for groundbreaking work on black holes.",
+      "Lived with ALS for most of his adult life.",
+      "Wrote the best-selling book A Brief History of Time."
+    ],
+    "revealFact": "He lived with a motor neuron disease for most of his career.",
+    "wikidataId": "Q17714",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Stephen_Hawking.StarChild.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Stephen_Hawking.StarChild.jpg",
+      "license": "Public domain",
+      "attribution": "NASA via Wikimedia Commons (Original. Source (StarChild Learning Center). Archived directory listing at the Wayback Machine.), licensed under Public domain."
+    }
+  },
+  {
+    "id": "nikola-tesla",
+    "name": "Nikola Tesla",
+    "category": "Scientists",
+    "aliases": [],
+    "facts": [
+      "Serbian-American inventor and electrical engineer.",
+      "Pioneered alternating current (AC) electrical systems.",
+      "Held competing patents and rivalries with Thomas Edison.",
+      "Contributed to early radio and wireless technology."
+    ],
+    "revealFact": "He had a famous professional rivalry with Thomas Edison.",
+    "wikidataId": "Q9036",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Tesla_circa_1890.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Tesla_circa_1890.jpeg",
+      "license": "Public domain",
+      "attribution": "Napoleon Sarony via Wikimedia Commons (postcard Tesla Museum, document no. MNT, VI/V 10, via RadioGraphics), licensed under Public domain."
+    }
+  },
+  {
+    "id": "ada-lovelace",
+    "name": "Ada Lovelace",
+    "category": "Scientists",
+    "aliases": [],
+    "facts": [
+      "English mathematician, active in the 19th century.",
+      "Worked with Charles Babbage on the Analytical Engine.",
+      "Regarded by many as the first computer programmer.",
+      "Daughter of the poet Lord Byron."
+    ],
+    "revealFact": "She is considered by many historians to be the first computer programmer.",
+    "wikidataId": "Q7259",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Ada_Lovelace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Ada_Lovelace.jpg",
+      "license": "Public domain",
+      "attribution": "Margaret Sarah Carpenter via Wikimedia Commons (Government Art Collection), licensed under Public domain."
+    }
+  },
+  {
+    "id": "galileo-galilei",
+    "name": "Galileo Galilei",
+    "category": "Scientists",
+    "aliases": [],
+    "facts": [
+      "Italian astronomer, physicist, and engineer.",
+      "Championed heliocentrism, that Earth orbits the Sun.",
+      "Significantly improved the design of the telescope.",
+      "Faced trial by the Roman Inquisition for his views."
+    ],
+    "revealFact": "He was put on trial for supporting a Sun-centered model of the universe.",
+    "wikidataId": "Q307",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Galileo.arp.300pix.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Galileo.arp.300pix.jpg",
+      "license": "Public domain",
+      "attribution": "Justus Sustermans via Wikimedia Commons (http://www.nmm.ac.uk/mag/pages/mnuExplore/PaintingDetail.cfm?ID=BHC2700 (originally; archive); see also http://collections.rmg.co.uk/collections/objects/14174.html), licensed under Public domain."
+    }
+  },
+  {
+    "id": "rosalind-franklin",
+    "name": "Rosalind Franklin",
+    "category": "Scientists",
+    "aliases": [],
+    "facts": [
+      "English chemist and X-ray crystallographer.",
+      "Her imaging work was critical to discovering DNA's structure.",
+      "Also contributed to understanding of coal and viruses.",
+      "Her contributions were widely recognized only after her death."
+    ],
+    "revealFact": "Her X-ray images were key evidence in discovering a famous molecule's double-helix shape.",
+    "wikidataId": "Q7474",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/9/97/Rosalind_Franklin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Rosalind_Franklin.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "MRC Laboratory of Molecular Biology via Wikimedia Commons (From the personal collection of Jenifer Glynn.), licensed under CC BY-SA 4.0."
+    }
+  },
+  {
+    "id": "alan-turing",
+    "name": "Alan Turing",
+    "category": "Scientists",
+    "aliases": [],
+    "facts": [
+      "British mathematician and computer scientist.",
+      "Pioneer of theoretical computer science and artificial intelligence.",
+      "Helped break the German Enigma code during World War II.",
+      "The 'Turing Test' for machine intelligence is named after him."
+    ],
+    "revealFact": "He helped crack a famous wartime encryption machine's code.",
+    "wikidataId": "Q7251",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/Alan_Turing_%281951%29_%28crop%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Alan_Turing_(1951)_(crop).jpg",
+      "license": "Public domain",
+      "attribution": "Elliott &amp; Fry via Wikimedia Commons (https://www.computerhistory.org/timeline/1949/), licensed under Public domain."
+    }
+  },
+  {
+    "id": "jane-goodall",
+    "name": "Jane Goodall",
+    "category": "Scientists",
+    "aliases": [],
+    "facts": [
+      "English primatologist and anthropologist.",
+      "Known for her decades-long study of wild chimpanzees.",
+      "Conducted pioneering research in Gombe Stream National Park.",
+      "Founded a global conservation and youth institute."
+    ],
+    "revealFact": "She is famous for her long-term field studies of wild chimpanzees.",
+    "wikidataId": "Q184746",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/9/98/Deputy_Secretary_Higginbottom_Poses_for_a_Photo_With_Dr._Jane_Goodall_and_the_State_Department%27s_Global_Health_Diplomacy_Director_Jordan_in_Washington_%2822365513310%29_%282%29_%28cropped_2%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Deputy_Secretary_Higginbottom_Poses_for_a_Photo_With_Dr._Jane_Goodall_and_the_State_Department%27s_Global_Health_Diplomacy_Director_Jordan_in_Washington_(22365513310)_(2)_(cropped_2).jpg",
+      "license": "Public domain",
+      "attribution": "U.S. Department of State from United States via Wikimedia Commons (Deputy Secretary Higginbottom Poses for a Photo With Dr. Jane Goodall and the State Department's Global Health Diplomacy Director Jordan in Washington), licensed under Public domain."
+    }
+  },
+  {
+    "id": "neil-degrasse-tyson",
+    "name": "Neil deGrasse Tyson",
+    "category": "Scientists",
+    "aliases": [],
+    "facts": [
+      "American astrophysicist and science communicator.",
+      "Director of the Hayden Planetarium in New York City.",
+      "Hosted the television series Cosmos: A Spacetime Odyssey.",
+      "Known for popularizing astronomy to general audiences."
+    ],
+    "revealFact": "He hosts a popular science TV series about the cosmos.",
+    "wikidataId": "Q310903",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/Neil_deGrasse_Tyson_in_June_2017_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Neil_deGrasse_Tyson_in_June_2017_(cropped).jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Norwegian University of Science and Technology via Wikimedia Commons (Norwegian University of Science and Technology Flickr account), licensed under CC BY-SA 2.0."
+    }
+  },
+  {
+    "id": "barack-obama",
+    "name": "Barack Obama",
+    "category": "Politicians",
+    "aliases": [],
+    "facts": [
+      "44th President of the United States.",
+      "First African American president in U.S. history.",
+      "Won the Nobel Peace Prize in 2009.",
+      "Previously served as a U.S. Senator from Illinois."
+    ],
+    "revealFact": "He was the first African American president of his country.",
+    "wikidataId": "Q76",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:President_Barack_Obama.jpg",
+      "license": "Public domain",
+      "attribution": "Official White House Photo by Pete Souza via Wikimedia Commons (P120612PS-0463 (direct link)Official White House page direct link)), licensed under Public domain."
+    }
+  },
+  {
+    "id": "winston-churchill",
+    "name": "Winston Churchill",
+    "category": "Politicians",
+    "aliases": [],
+    "facts": [
+      "British statesman and Prime Minister.",
+      "Led the United Kingdom through World War II.",
+      "Known for his wartime radio speeches.",
+      "Won the Nobel Prize in Literature in 1953."
+    ],
+    "revealFact": "He won a Nobel Prize not for politics, but for literature.",
+    "wikidataId": "Q8016",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Sir_Winston_Churchill_-_19086236948_(restored).jpg",
+      "license": "Public domain",
+      "attribution": "Unknown author via Wikimedia Commons (Flickr: Sir Winston Churchill), licensed under Public domain."
+    }
+  },
+  {
+    "id": "angela-merkel",
+    "name": "Angela Merkel",
+    "category": "Politicians",
+    "aliases": [],
+    "facts": [
+      "German politician and former Chancellor.",
+      "First woman to serve as Chancellor of Germany.",
+      "Served from 2005 to 2021.",
+      "Trained as a physical chemist before entering politics."
+    ],
+    "revealFact": "She trained as a scientist before becoming a long-serving head of government.",
+    "wikidataId": "Q567",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Angela_Merkel_Juli_2010_-_3zu4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Angela_Merkel_Juli_2010_-_3zu4.jpg",
+      "license": "CC BY-SA 3.0 de",
+      "attribution": "Armin Linnartz via Wikimedia Commons (File:Angela Merkel, Juli 2010.jpg (\"Armin Linnartz site [http://www.cducsu.de/WebUserControls/ShowPicture.aspx?picid=3512&amp;type=3 image\")), licensed under CC BY-SA 3.0 de."
+    }
+  },
+  {
+    "id": "margaret-thatcher",
+    "name": "Margaret Thatcher",
+    "category": "Politicians",
+    "aliases": [],
+    "facts": [
+      "British politician and former Prime Minister.",
+      "First woman to serve as UK Prime Minister.",
+      "Served from 1979 to 1990.",
+      "Nicknamed the 'Iron Lady' for her leadership style."
+    ],
+    "revealFact": "She earned the nickname 'Iron Lady'.",
+    "wikidataId": "Q7416",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Margaret_Thatcher_stock_portrait_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Margaret_Thatcher_stock_portrait_(cropped).jpg",
+      "license": "Copyrighted free use",
+      "attribution": "derivative work by Begoon via Wikimedia Commons (This file was derived from:  Margaret Thatcher stock portrait.tif), licensed under Copyrighted free use."
+    }
+  },
+  {
+    "id": "john-f-kennedy",
+    "name": "John F. Kennedy",
+    "category": "Politicians",
+    "aliases": [],
+    "facts": [
+      "35th President of the United States.",
+      "Youngest person ever elected U.S. president.",
+      "Presided over the Cuban Missile Crisis.",
+      "Assassinated in Dallas, Texas in 1963."
+    ],
+    "revealFact": "He was assassinated while riding in a motorcade in Dallas.",
+    "wikidataId": "Q9696",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/John_F._Kennedy%2C_White_House_color_photo_portrait.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:John_F._Kennedy,_White_House_color_photo_portrait.jpg",
+      "license": "Public domain",
+      "attribution": "Cecil W. Stoughton via Wikimedia Commons (This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.), licensed under Public domain."
+    }
+  },
+  {
+    "id": "franklin-d-roosevelt",
+    "name": "Franklin D. Roosevelt",
+    "category": "Politicians",
+    "aliases": [],
+    "facts": [
+      "32nd President of the United States.",
+      "Only U.S. president elected to four terms.",
+      "Led the country through the Great Depression and World War II.",
+      "Launched the New Deal recovery programs."
+    ],
+    "revealFact": "He is the only U.S. president to have been elected four times.",
+    "wikidataId": "Q8007",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/4/42/FDR_1944_Color_Portrait.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:FDR_1944_Color_Portrait.jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Leon Perskie via Wikimedia Commons (CT 09-109(1)), licensed under CC BY 2.0."
+    }
+  },
+  {
+    "id": "indira-gandhi",
+    "name": "Indira Gandhi",
+    "category": "Politicians",
+    "aliases": [],
+    "facts": [
+      "Indian politician and former Prime Minister.",
+      "First and only female Prime Minister of India.",
+      "Daughter of India's first Prime Minister, Jawaharlal Nehru.",
+      "Served two separate terms as Prime Minister."
+    ],
+    "revealFact": "She was the daughter of her country's first Prime Minister.",
+    "wikidataId": "Q1149",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Indira_Gandhi_official_portrait.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Indira_Gandhi_official_portrait.png",
+      "license": "GODL-India",
+      "attribution": "Prime Minister's Office via Wikimedia Commons (https://www.pmindia.gov.in/en/former_pm/smt-indira-gandhi/), licensed under GODL-India."
+    }
+  },
+  {
+    "id": "vladimir-putin",
+    "name": "Vladimir Putin",
+    "category": "Politicians",
+    "aliases": [],
+    "facts": [
+      "Russian politician and former intelligence officer.",
+      "Has served multiple terms as President of Russia.",
+      "Previously worked as an officer in the KGB.",
+      "Also served as Russia's Prime Minister."
+    ],
+    "revealFact": "He worked as an intelligence officer before entering politics.",
+    "wikidataId": "Q7747",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/3/32/Putin_V_2026_08_10.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Putin_V_2026_08_10.png",
+      "license": "CC BY 4.0",
+      "attribution": "Пресс-служба Президента России via Wikimedia Commons (http://www.kremlin.ru/events/president/news/80502/), licensed under CC BY 4.0."
+    }
+  },
+  {
+    "id": "theodore-roosevelt",
+    "name": "Theodore Roosevelt",
+    "category": "Politicians",
+    "aliases": [],
+    "facts": [
+      "26th President of the United States.",
+      "Known for conservationist policies and national parks expansion.",
+      "Led the Rough Riders cavalry unit in the Spanish-American War.",
+      "Won the Nobel Peace Prize in 1906."
+    ],
+    "revealFact": "He led a famous volunteer cavalry unit before becoming president.",
+    "wikidataId": "Q33866",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Theodore_Roosevelt_by_the_Pach_Bros.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_by_the_Pach_Bros.jpg",
+      "license": "Public domain",
+      "attribution": "Adam Cuerden via Wikimedia Commons (This image  is available from the United States Library of Congress's Prints and Photographs division under the digital ID ppmsca.35645.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.), licensed under Public domain."
+    }
+  },
+  {
+    "id": "golda-meir",
+    "name": "Golda Meir",
+    "category": "Politicians",
+    "aliases": [],
+    "facts": [
+      "Israeli politician and former Prime Minister.",
+      "Fourth Prime Minister of Israel.",
+      "One of the founders and early signatories of the state of Israel.",
+      "Served as Prime Minister during the Yom Kippur War."
+    ],
+    "revealFact": "She was in office during a major Middle East war in 1973.",
+    "wikidataId": "Q42992",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Golda_Meir_03265u-2_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Golda_Meir_03265u-2_(cropped).jpg",
+      "license": "Public domain",
+      "attribution": "Talmoryair (talk) after Marion S. Trikosko via Wikimedia Commons (This image  is available from the United States Library of Congress's Prints and Photographs division under the digital ID ppmsc.03265.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.), licensed under Public domain."
+    }
+  },
+  {
+    "id": "justin-trudeau",
+    "name": "Justin Trudeau",
+    "category": "Politicians",
+    "aliases": [],
+    "facts": [
+      "Canadian politician and former Prime Minister.",
+      "Son of former Prime Minister Pierre Trudeau.",
+      "Led the Liberal Party of Canada.",
+      "First took office in 2015."
+    ],
+    "revealFact": "His father also served as his country's Prime Minister.",
+    "wikidataId": "Q3099714",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Justin_Trudeau_at_the_European_Commission_-_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Justin_Trudeau_at_the_European_Commission_-_2025.jpg",
+      "license": "Attribution",
+      "attribution": "European Union via Wikimedia Commons (https://newsroom.consilium.europa.eu/permalink/p199341), licensed under Attribution."
+    }
+  },
+  {
+    "id": "benjamin-franklin",
+    "name": "Benjamin Franklin",
+    "category": "Politicians",
+    "aliases": [],
+    "facts": [
+      "American Founding Father, diplomat, and inventor.",
+      "Helped draft the U.S. Declaration of Independence.",
+      "Conducted famous experiments with electricity and lightning.",
+      "Appears on the U.S. $100 bill."
+    ],
+    "revealFact": "He conducted a famous kite experiment involving a thunderstorm.",
+    "wikidataId": "Q34969",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg",
+      "license": "Public domain",
+      "attribution": "Joseph-Siffred Duplessis via Wikimedia Commons (ZgEyj5EEKdux-g at Google Cultural Institute maximum zoom level), licensed under Public domain."
+    }
+  },
+  {
+    "id": "elon-musk",
+    "name": "Elon Musk",
+    "category": "Business Leaders",
+    "aliases": [],
+    "facts": [
+      "South African-born entrepreneur and engineer.",
+      "CEO of Tesla and SpaceX.",
+      "Co-founded the online payment company PayPal.",
+      "One of the wealthiest people in the world."
+    ],
+    "revealFact": "He leads both an electric car company and a private rocket company.",
+    "wikidataId": "Q317521",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Elon_Musk_%2854816836217%29_%28cropped_2%29_%28b%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Elon_Musk_(54816836217)_(cropped_2)_(b).jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Gage Skidmore via Wikimedia Commons (https://www.flickr.com/photos/gageskidmore/54816836217/), licensed under CC BY-SA 4.0."
+    }
+  },
+  {
+    "id": "steve-jobs",
+    "name": "Steve Jobs",
+    "category": "Business Leaders",
+    "aliases": [],
+    "facts": [
+      "American entrepreneur and co-founder of Apple Inc.",
+      "Led the development of the iPhone and iPad.",
+      "Was ousted from Apple in the 1980s and later returned as CEO.",
+      "Known for his distinctive black turtleneck and product keynotes."
+    ],
+    "revealFact": "He was famously fired from the company he co-founded, then later returned to lead it.",
+    "wikidataId": "Q19837",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Steve_Jobs_Headshot_2010-CROP2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Steve_Jobs_Headshot_2010-CROP2.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "MetalGearLiquid, based on File:Steve_Jobs_Headshot_2010-CROP.jpg made by Matt Yohe via Wikimedia Commons (Own work, based on File:Steve_Jobs_Headshot_2010-CROP.jpg made by Matt Yohe), licensed under CC BY-SA 3.0."
+    }
+  },
+  {
+    "id": "jeff-bezos",
+    "name": "Jeff Bezos",
+    "category": "Business Leaders",
+    "aliases": [],
+    "facts": [
+      "American entrepreneur, founder of Amazon.",
+      "Started Amazon as an online bookstore in 1994.",
+      "Also founded the aerospace company Blue Origin.",
+      "Previously owned The Washington Post newspaper."
+    ],
+    "revealFact": "His company started out selling only books online.",
+    "wikidataId": "Q312556",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Jeff_Bezos_at_Amazon_Spheres_Grand_Opening_in_Seattle_-_2018_%2839074799225%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Jeff_Bezos_at_Amazon_Spheres_Grand_Opening_in_Seattle_-_2018_(39074799225)_(cropped).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Seattle City Council from Seattle via Wikimedia Commons (https://www.flickr.com/photos/seattlecitycouncil/39074799225/), licensed under CC BY 2.0."
+    }
+  },
+  {
+    "id": "bill-gates",
+    "name": "Bill Gates",
+    "category": "Business Leaders",
+    "aliases": [],
+    "facts": [
+      "American entrepreneur, co-founder of Microsoft.",
+      "Helped develop the Windows operating system.",
+      "Now focuses on global health philanthropy.",
+      "Co-chairs the Bill & Melinda Gates Foundation."
+    ],
+    "revealFact": "He now spends much of his time on global health philanthropy.",
+    "wikidataId": "Q5284",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/Bill_Gates_at_the_European_Commission_-_2025_-_P067383-987995_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Bill_Gates_at_the_European_Commission_-_2025_-_P067383-987995_(cropped).jpg",
+      "license": "CC BY 4.0",
+      "attribution": "Bogdan Hoyaux / European Union via Wikimedia Commons (https://audiovisual.ec.europa.eu/en/photo/P-067383~2F00-01), licensed under CC BY 4.0."
+    }
+  },
+  {
+    "id": "oprah-winfrey",
+    "name": "Oprah Winfrey",
+    "category": "Business Leaders",
+    "aliases": [],
+    "facts": [
+      "American media executive and talk show host.",
+      "Hosted The Oprah Winfrey Show for 25 years.",
+      "First Black woman billionaire in America.",
+      "Founded her own television network, OWN."
+    ],
+    "revealFact": "She hosted one of the most popular daytime talk shows for 25 years.",
+    "wikidataId": "Q55800",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Pre_Inaugural_Reception_%2852639556983%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Pre_Inaugural_Reception_(52639556983)_(cropped).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Maryland GovPics via Wikimedia Commons (Pre Inaugural Reception), licensed under CC BY 2.0."
+    }
+  },
+  {
+    "id": "warren-buffett",
+    "name": "Warren Buffett",
+    "category": "Business Leaders",
+    "aliases": [],
+    "facts": [
+      "American investor and businessman.",
+      "Chairman and CEO of Berkshire Hathaway.",
+      "Known as the 'Oracle of Omaha' for his investing acumen.",
+      "Has pledged to give away the majority of his fortune."
+    ],
+    "revealFact": "He is nicknamed the 'Oracle of Omaha'.",
+    "wikidataId": "Q47213",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/51/Warren_Buffett_KU_Visit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Warren_Buffett_KU_Visit.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Mark Hirschey via Wikimedia Commons (Work of Mark Hirschey), licensed under CC BY-SA 2.0."
+    }
+  },
+  {
+    "id": "mark-zuckerberg",
+    "name": "Mark Zuckerberg",
+    "category": "Business Leaders",
+    "aliases": [],
+    "facts": [
+      "American entrepreneur, co-founder of Facebook.",
+      "Started the company from his college dorm room.",
+      "Renamed the parent company to Meta in 2021.",
+      "Has invested heavily in virtual and augmented reality."
+    ],
+    "revealFact": "He started his famous company from a college dormitory room.",
+    "wikidataId": "Q36215",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Mark_Zuckerberg_F8_2019_Keynote_(32830578717)_(cropped).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Anthony Quintano from Westminster, United States via Wikimedia Commons (Alvin Litana MirasolF8 2019 Keynote), licensed under CC BY 2.0."
+    }
+  },
+  {
+    "id": "richard-branson",
+    "name": "Richard Branson",
+    "category": "Business Leaders",
+    "aliases": [],
+    "facts": [
+      "British entrepreneur, founder of the Virgin Group.",
+      "Virgin's brands span music, airlines, and space tourism.",
+      "Known for adventurous publicity stunts like ballooning.",
+      "Founded the space tourism company Virgin Galactic."
+    ],
+    "revealFact": "His company brand spans everything from music to airlines to space travel.",
+    "wikidataId": "Q194419",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/5.3.10RichardBransonByDavidShankbone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:5.3.10RichardBransonByDavidShankbone.jpg",
+      "license": "CC BY 3.0",
+      "attribution": "User:David Shankbone via Wikimedia Commons (David Shankbone), licensed under CC BY 3.0."
+    }
+  },
+  {
+    "id": "walt-disney",
+    "name": "Walt Disney",
+    "category": "Business Leaders",
+    "aliases": [],
+    "facts": [
+      "American entrepreneur and animator.",
+      "Founded The Walt Disney Company.",
+      "Created the character Mickey Mouse.",
+      "Pioneered the American animated feature film."
+    ],
+    "revealFact": "He created a famous cartoon mouse that became his company's mascot.",
+    "wikidataId": "Q8704",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/d/df/Walt_Disney_1946.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Walt_Disney_1946.JPG",
+      "license": "Public domain",
+      "attribution": "Boy Scouts of America via Wikimedia Commons (eBay item\nphoto front\n\nphoto back), licensed under Public domain."
+    }
+  },
+  {
+    "id": "henry-ford",
+    "name": "Henry Ford",
+    "category": "Business Leaders",
+    "aliases": [],
+    "facts": [
+      "American industrialist, founder of Ford Motor Company.",
+      "Pioneered the moving assembly line for mass production.",
+      "Made automobiles affordable for average American workers.",
+      "Introduced the Model T in 1908."
+    ],
+    "revealFact": "He pioneered a manufacturing technique that made cars affordable for the masses.",
+    "wikidataId": "Q8768",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/Henry_ford_1919.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Henry_ford_1919.jpg",
+      "license": "Public domain",
+      "attribution": "Fred Hartsook via Wikimedia Commons (This image  is available from the United States Library of Congress's Prints and Photographs division under the digital ID cph.3c11278.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.), licensed under Public domain."
+    }
+  },
+  {
+    "id": "sara-blakely",
+    "name": "Sara Blakely",
+    "category": "Business Leaders",
+    "aliases": [],
+    "facts": [
+      "American entrepreneur, founder of Spanx.",
+      "Started the company with personal savings of $5,000.",
+      "Became one of the youngest self-made female billionaires.",
+      "Known for advocating for women entrepreneurs."
+    ],
+    "revealFact": "She started her shapewear company with just a few thousand dollars of savings.",
+    "wikidataId": "Q782637",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Sara_Blakely_2012_Shankbone.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Sara_Blakely_2012_Shankbone.JPG",
+      "license": "CC BY 3.0",
+      "attribution": "David Shankbone via Wikimedia Commons (Own work), licensed under CC BY 3.0."
+    }
+  },
+  {
+    "id": "sheryl-sandberg",
+    "name": "Sheryl Sandberg",
+    "category": "Business Leaders",
+    "aliases": [],
+    "facts": [
+      "American business executive and author.",
+      "Served as Chief Operating Officer of Facebook/Meta.",
+      "Previously worked at Google in advertising operations.",
+      "Wrote the best-selling book Lean In."
+    ],
+    "revealFact": "She wrote a best-selling book about women and leadership called Lean In.",
+    "wikidataId": "Q234653",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Sheryl_Sandberg_Moet_Hennessy_Financial_Times_Club_Dinner_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Sheryl_Sandberg_Moet_Hennessy_Financial_Times_Club_Dinner_2011.jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Financial Times via Wikimedia Commons (Flickr: Sheryl Sandberg, Facebook), licensed under CC BY 2.0."
+    }
+  }
+]
