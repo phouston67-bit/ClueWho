@@ -67,7 +67,7 @@ lib/
   people.ts       # Server-only dataset access
   leaderboard.ts  # Best-effort client-side leaderboard read/write
   types.ts        # Shared domain types
-data/people.json          # Curated dataset (~96 people across 8 categories)
+data/people.json          # Curated dataset (~240 people across 8 categories)
 scripts/seed-people.ts    # Resolves real licensed photos from Wikidata/Commons
 db/schema.sql             # Optional Supabase schema + RLS policy stubs
 ```
@@ -117,8 +117,8 @@ anyone can read the leaderboard). Tighten them (e.g. scope to
 
 ### 4. Seed real, licensed photos
 
-`data/people.json` ships with ~96 people across 8 categories (~12 each,
-Football a little larger at 13), but the `image` field starts as a `TODO`
+`data/people.json` ships with ~240 people across 8 categories (30 each),
+but the `image` field starts as a `TODO`
 placeholder (the app shows a 🕵️ silhouette card instead of a photo until
 seeded). Run:
 
@@ -212,7 +212,7 @@ to change.
 - [ ] Add a real `OPENAI_API_KEY` with billing enabled for production
       traffic volume.
 - [ ] Set a strong, unique `SESSION_SECRET` in your production environment.
-- [ ] `npm run seed` has already been run once (95/96 people have real,
+- [ ] `npm run seed` has already been run once (239/240 people have real,
       licensed Commons photos). `Cleopatra` has no free-use image on
       Wikidata and still shows the placeholder card - either accept this,
       pick a different person for that slot, or manually source/attribute a

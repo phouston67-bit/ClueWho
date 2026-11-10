@@ -67,6 +67,7 @@ interface CommonsImageInfoResponse {
       {
         imageinfo?: Array<{
           url: string;
+          thumburl?: string;
           descriptionurl?: string;
           extmetadata?: Record<string, { value: string }>;
         }>;
@@ -146,10 +147,15 @@ async function resolveCommonsImage(
   fileName: string
 ): Promise<ResolvedImage | null> {
   const title = `File:${fileName}`;
+  // Always request a scaled thumbnail (iiurlwidth) in addition to the
+  // original file URL. Some Commons originals are TIFF/SVG/etc., which
+  // browsers can't render directly in an <img> tag - the thumbnail is
+  // always re-encoded to a web-safe raster format (JPEG/PNG), and it's
+  // also a more mobile-friendly payload size than a full-resolution original.
   const url =
     `https://commons.wikimedia.org/w/api.php?action=query&titles=${encodeURIComponent(
       title
-    )}&prop=imageinfo&iiprop=url|extmetadata&format=json`;
+    )}&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=800&format=json`;
   const result = await fetchJson<CommonsImageInfoResponse>(url);
   const pages = result.query?.pages ?? {};
   const page = Object.values(pages)[0];
@@ -166,7 +172,7 @@ async function resolveCommonsImage(
   const attribution = `${artist} via Wikimedia Commons (${credit}), licensed under ${license}.`;
 
   return {
-    commonsFileUrl: info.url,
+    commonsFileUrl: info.thumburl ?? info.url,
     sourcePageUrl: info.descriptionurl ?? `https://commons.wikimedia.org/wiki/${title}`,
     license,
     attribution,
