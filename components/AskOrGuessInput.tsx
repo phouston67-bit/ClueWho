@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useState, type FormEvent, type KeyboardEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
+import { isLikelyQuestion } from "@/lib/textIntent";
 
 interface AskOrGuessInputProps {
   onAsk: (question: string) => Promise<void> | void;
@@ -13,12 +14,10 @@ interface AskOrGuessInputProps {
 }
 
 /**
- * A single shared text box for both asking a yes/no question and guessing
- * the secret person's name, instead of two separate inputs. Pressing Enter
- * auto-detects intent (a trailing "?" submits as a question, anything else
- * submits as a guess); the two explicit buttons let the player override
- * that guess at any time - useful on mobile, where tapping a button is
- * often easier than remembering to type a "?".
+ * A single smart text box for both asking a yes/no question and guessing
+ * the secret person's name. There is no mode toggle - the box itself
+ * decides what you meant (question vs. guess) from the wording and submits
+ * to the right endpoint, with a live hint so the behavior stays visible.
  */
 export default function AskOrGuessInput({
   onAsk,
@@ -33,84 +32,68 @@ export default function AskOrGuessInput({
   const inputRef = useRef<HTMLInputElement>(null);
 
   const loading = Boolean(askLoading || guessLoading);
-  const canAsk = !loading && questionsRemaining > 0;
-  const canGuess = !loading;
   const trimmed = value.trim();
+  const asksQuestion = isLikelyQuestion(trimmed);
+  const outOfQuestions = questionsRemaining <= 0;
+  // Out of questions, any input falls back to a guess instead of blocking.
+  const willAsk = asksQuestion && !outOfQuestions;
+  const isDisabled = loading || !trimmed;
 
-  async function submitAsk() {
-    if (!trimmed || !canAsk) return;
-    await onAsk(trimmed);
-    setValue("");
-    inputRef.current?.focus();
-  }
-
-  async function submitGuess() {
-    if (!trimmed || !canGuess) return;
-    await onGuess(trimmed);
-    setValue("");
-    inputRef.current?.focus();
-  }
-
-  function handleFormSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    // Smart default for the Enter key: a question mark means "ask",
-    // anything else means "guess".
-    if (trimmed.endsWith("?")) {
-      void submitAsk();
+    if (!trimmed || loading) return;
+    if (willAsk) {
+      await onAsk(trimmed);
     } else {
-      void submitGuess();
+      await onGuess(trimmed);
     }
-  }
-
-  function handleKeyDown(e: KeyboardEvent<HTMLInputElement>) {
-    // Keyboard shortcuts so desktop players don't have to reach for the mouse.
-    if ((e.metaKey || e.ctrlKey) && e.key === "Enter") {
-      e.preventDefault();
-      void submitGuess();
-    }
+    setValue("");
+    inputRef.current?.focus();
   }
 
   return (
-    <form onSubmit={handleFormSubmit} className="flex flex-col gap-1.5">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-1.5">
       <label htmlFor="ask-or-guess" className="text-xs font-medium text-slate-400">
-        Ask a yes/no question ({questionsRemaining} left) or type your guess -
-        guessing is free and doesn&apos;t use a question
-        {wrongGuesses > 0 ? ` · ${wrongGuesses} wrong so far` : ""}
+        Ask a yes/no question ({questionsRemaining} left) or guess their name
+        - guessing is free{wrongGuesses > 0 ? ` · ${wrongGuesses} wrong so far` : ""}
       </label>
-      <input
-        ref={inputRef}
-        id="ask-or-guess"
-        type="text"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        onKeyDown={handleKeyDown}
-        placeholder='Ask "Are they still alive?" or guess their name...'
-        maxLength={300}
-        disabled={loading}
-        className={`w-full rounded-xl border bg-slate-900 px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-1 disabled:opacity-50 ${
-          lastGuessWasWrong
-            ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
-            : "border-slate-700 focus:border-brand-500 focus:ring-brand-500"
-        }`}
-      />
       <div className="flex gap-2">
+        <input
+          ref={inputRef}
+          id="ask-or-guess"
+          type="text"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          placeholder='Ask "Are they still alive?" or type a guess...'
+          maxLength={300}
+          disabled={loading}
+          className={`flex-1 rounded-xl border bg-slate-900 px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-1 disabled:opacity-50 ${
+            lastGuessWasWrong
+              ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
+              : "border-slate-700 focus:border-brand-500 focus:ring-brand-500"
+          }`}
+        />
         <button
-          type="button"
-          onClick={submitAsk}
-          disabled={!trimmed || !canAsk}
-          className="flex-1 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition active:scale-95 hover:bg-brand-500 disabled:pointer-events-none disabled:opacity-40"
+          type="submit"
+          disabled={isDisabled}
+          className={`shrink-0 rounded-xl px-4 py-2.5 text-sm font-semibold text-white transition active:scale-95 disabled:pointer-events-none disabled:opacity-40 ${
+            willAsk
+              ? "bg-brand-600 hover:bg-brand-500"
+              : "bg-emerald-600 hover:bg-emerald-500"
+          }`}
         >
-          {askLoading ? "..." : "❓ Ask"}
-        </button>
-        <button
-          type="button"
-          onClick={submitGuess}
-          disabled={!trimmed || !canGuess}
-          className="flex-1 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition active:scale-95 hover:bg-emerald-500 disabled:pointer-events-none disabled:opacity-40"
-        >
-          {guessLoading ? "..." : "🎯 Guess"}
+          {loading ? "..." : willAsk ? "Ask" : "Guess"}
         </button>
       </div>
+      {trimmed && (
+        <p className="text-xs text-slate-500">
+          {willAsk
+            ? "Reading this as a question →"
+            : outOfQuestions && asksQuestion
+              ? "Out of questions - reading this as a guess →"
+              : "Reading this as a guess →"}
+        </p>
+      )}
       {lastGuessWasWrong && (
         <p className="text-xs text-rose-400">Not quite - try again!</p>
       )}

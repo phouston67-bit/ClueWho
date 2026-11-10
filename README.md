@@ -55,8 +55,9 @@ app/
     reveal/route.ts         # End round, return answer + score breakdown
 components/
   CategoryPicker.tsx, ImageReveal.tsx, QuestionList.tsx, AskOrGuessInput.tsx
-  (shared ask/guess text box with Ask & Guess buttons), ScoreSummary.tsx,
-  StreakBadge.tsx, AdSlot.tsx, Leaderboard.tsx, GameBoard.tsx (orchestrator)
+  (single smart text box that auto-detects a question vs. a guess),
+  ScoreSummary.tsx, StreakBadge.tsx, AdSlot.tsx, Leaderboard.tsx,
+  GameBoard.tsx (orchestrator)
 lib/
   openai.ts       # Grounded, structured-output question answering
   scoring.ts      # Pure score + streak math (unit tested)
