@@ -67,7 +67,7 @@ export async function askGroundedQuestion(
   const completion = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     temperature: 0.2,
-    max_tokens: 150,
+    max_completion_tokens: 150,
     messages: [
       { role: "system", content: buildSystemPrompt(person) },
       {

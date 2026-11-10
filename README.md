@@ -4,7 +4,7 @@ A mobile-first, Guess-Who-style celebrity guessing game. Pick a category, get a
 secret photo, ask up to 5 yes/no questions (answered by an AI grounded in a
 curated fact sheet), then guess who it is before time and questions run out.
 
-Built with **Next.js 14 (App Router, TypeScript)**, **Tailwind CSS**, the
+Built with **Next.js 16 (App Router, TypeScript)**, **Tailwind CSS**, the
 **OpenAI API** (`gpt-4o-mini` with structured output), and optional
 **Supabase** persistence.
 
@@ -149,7 +149,7 @@ Open <http://localhost:3000>.
 
 ```bash
 npm run test     # vitest unit tests (lib/scoring.ts)
-npm run lint      # next lint
+npm run lint      # eslint . (flat config in eslint.config.mjs)
 npm run build     # production build
 ```
 
@@ -179,14 +179,30 @@ to change.
 - All score math is computed authoritatively on the server from the signed
   token's `startedAt`/`questionsUsed`/`wrongGuesses`, not trusted from the
   client.
-- **Dependency tradeoff**: this project intentionally stays on the
-  **Next.js 14.x line** (`next@14.2.35`, the latest patched 14.x release) per
-  project requirements. `npm audit` reports a number of advisories whose
-  fixes require major-version jumps (Next 16, Vitest 5, Zod 4,
-  `eslint-config-next` 16) that would break the Next 14 requirement and/or
-  the App Router APIs this project relies on. If you don't need to stay on
-  Next 14, run `npm audit fix --force` and re-test before deploying to a
-  security-sensitive environment.
+- **Dependency status**: the project tracks current, patched stable
+  releases - **Next.js `16.4.6`** (Active LTS), **React/React-DOM
+  `19.3.1`**, **OpenAI SDK `7.55.0`**, **Zod `4.6.7`**, **Vitest `5.1.0`**,
+  **ESLint `10.14.0`** with `eslint-config-next@16.4.6`. `npm audit` reports
+  **0 vulnerabilities**. The one class of advisory that showed up after the
+  upgrade (a transitive `minimatch` ReDoS pulled in only by lint tooling,
+  never shipped to production) was fixed with a targeted
+  `"overrides": { "minimatch": "^11.0.6" }` in `package.json` rather than
+  `npm audit fix --force`, which would have *downgraded* ESLint instead of
+  genuinely fixing anything - avoid blind force-fixes for the same reason.
+  Two deliberate version holds, not oversights:
+  - **TypeScript stays on `5.9.x`** rather than jumping to the `7.0` line.
+    TypeScript 7 is a from-scratch Go-native compiler port with stricter
+    defaults (`strict: true`, `module: esnext`); the TypeScript team
+    recommends adopting those behaviors incrementally rather than taking the
+    jump in the same change as a framework upgrade.
+  - **Tailwind CSS stays on the `3.4.x` line** (latest patch) rather than
+    `4.x`, which replaces the PostCSS/`tailwind.config.ts` setup with a
+    CSS-first config model. There's no security advisory forcing this move,
+    so it's left as a deliberate follow-up rather than bundled into this
+    upgrade.
+  - Note: `next lint` was removed in Next.js 16; linting now runs via the
+    ESLint CLI directly (`npm run lint` → `eslint .`) using the flat config
+    in `eslint.config.mjs`.
 
 ## Remaining setup to go live
 

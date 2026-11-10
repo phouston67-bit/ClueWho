@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import CategoryPicker from "@/components/CategoryPicker";
 import ImageReveal from "@/components/ImageReveal";
 import QuestionList, { type AnsweredQuestion } from "@/components/QuestionList";
@@ -71,7 +71,16 @@ export default function GameBoard() {
   const [error, setError] = useState<string | null>(null);
   const wrongGuessTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => {
+  // Hydrates streak/bestStreak from localStorage (a client-only external
+  // system that isn't available during SSR) right before first paint, so
+  // real values render without a visible flash. eslint-plugin-react-hooks'
+  // set-state-in-effect rule flags any setState-in-effect as a potential
+  // derived-state anti-pattern, but a one-time read of an external store on
+  // mount - which can't be done during render without an SSR/client
+  // mismatch - is exactly the case the rule's own docs call a legitimate
+  // exception (https://react.dev/learn/you-might-not-need-an-effect).
+  useLayoutEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setStreak(readNumber(STREAK_KEY));
     setBestStreak(readNumber(BEST_STREAK_KEY));
   }, []);
