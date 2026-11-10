@@ -4,8 +4,7 @@ import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import CategoryPicker from "@/components/CategoryPicker";
 import ImageReveal from "@/components/ImageReveal";
 import QuestionList, { type AnsweredQuestion } from "@/components/QuestionList";
-import QuestionInput from "@/components/QuestionInput";
-import GuessInput from "@/components/GuessInput";
+import AskOrGuessInput from "@/components/AskOrGuessInput";
 import ScoreSummary from "@/components/ScoreSummary";
 import StreakBadge from "@/components/StreakBadge";
 import AdSlot from "@/components/AdSlot";
@@ -338,15 +337,12 @@ export default function GameBoard() {
             maxQuestions={round.maxQuestions}
           />
 
-          <QuestionInput
-            onSubmit={askQuestion}
-            loading={askLoading}
+          <AskOrGuessInput
+            onAsk={askQuestion}
+            onGuess={submitGuess}
+            askLoading={askLoading}
+            guessLoading={guessLoading}
             questionsRemaining={round.questionsRemaining}
-          />
-
-          <GuessInput
-            onSubmit={submitGuess}
-            loading={guessLoading}
             wrongGuesses={round.wrongGuesses}
             lastGuessWasWrong={round.lastGuessWrong}
           />

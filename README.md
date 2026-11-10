@@ -54,9 +54,9 @@ app/
     guess/route.ts          # Fuzzy-match guess check
     reveal/route.ts         # End round, return answer + score breakdown
 components/
-  CategoryPicker.tsx, ImageReveal.tsx, QuestionList.tsx, QuestionInput.tsx,
-  GuessInput.tsx, ScoreSummary.tsx, StreakBadge.tsx, AdSlot.tsx,
-  Leaderboard.tsx, GameBoard.tsx (orchestrator)
+  CategoryPicker.tsx, ImageReveal.tsx, QuestionList.tsx, AskOrGuessInput.tsx
+  (shared ask/guess text box with Ask & Guess buttons), ScoreSummary.tsx,
+  StreakBadge.tsx, AdSlot.tsx, Leaderboard.tsx, GameBoard.tsx (orchestrator)
 lib/
   openai.ts       # Grounded, structured-output question answering
   scoring.ts      # Pure score + streak math (unit tested)
