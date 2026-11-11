@@ -166,15 +166,35 @@ npm run build     # production build
 
 ## Ads (AdSense now, AdMob-ready later)
 
-`components/AdSlot.tsx` is an isolated placeholder component with no game
-logic coupled to it. Today it renders a dev placeholder unless
-`NEXT_PUBLIC_ADSENSE_CLIENT_ID` is set, in which case you can drop in a real
-Google AdSense `<ins class="adsbygoogle">` unit (requires an **approved
-AdSense account** - apply at <https://www.google.com/adsense>). When you
-later wrap this app with [Capacitor](https://capacitorjs.com) for a native
-iOS/Android port, swap the internals of `AdSlot.tsx` for an AdMob SDK call -
-every other component only ever renders `<AdSlot />`, so no other code needs
-to change.
+`components/AdSlot.tsx` renders **real Google AdSense ad units** once fully
+configured, and a dev placeholder otherwise - no code changes are needed to
+go live, only environment variables. `app/layout.tsx` loads the AdSense
+script site-wide, and `app/ads.txt/route.ts` serves a correct `ads.txt` for
+your publisher ID automatically.
+
+To go live with real ads:
+
+1. **Apply for an AdSense account** at <https://www.google.com/adsense> for
+   the domain you'll deploy to, and wait for approval (this can take days;
+   Google reviews the live site, so deploy first with the placeholder ads
+   and apply once it's publicly reachable).
+2. Once approved, find your **publisher/client ID** (`ca-pub-...`) under
+   **Account > Settings > Account information**, and set
+   `NEXT_PUBLIC_ADSENSE_CLIENT_ID`.
+3. Create two **Display ad** units under **Ads > By ad unit** - one for the
+   banner placement, one for the interstitial (reveal-screen) placement -
+   and copy each one's numeric ad slot ID into
+   `NEXT_PUBLIC_ADSENSE_BANNER_SLOT_ID` / `NEXT_PUBLIC_ADSENSE_INTERSTITIAL_SLOT_ID`.
+4. Redeploy with all three env vars set. Verify `https://yourdomain.com/ads.txt`
+   returns your publisher line, and check **AdSense > Sites** for any
+   outstanding "ads.txt" warnings (can take up to 24h to clear).
+5. Real ads only render in production over HTTPS on your verified domain -
+   `localhost` will keep showing the dev placeholder even with real IDs set.
+
+When you later wrap this app with [Capacitor](https://capacitorjs.com) for a
+native iOS/Android port, swap the internals of `AdSlot.tsx` for an AdMob SDK
+call - every other component only ever renders `<AdSlot />`, so no other code
+needs to change.
 
 ## Security notes
 
@@ -215,7 +235,46 @@ to change.
     ESLint CLI directly (`npm run lint` → `eslint .`) using the flat config
     in `eslint.config.mjs`.
 
-## Remaining setup to go live
+## Going to production
+
+### Deploy
+
+The app is a standard Next.js app with no custom server - deploy it to
+[Vercel](https://vercel.com) (zero-config, built by the Next.js team),
+or any Node.js host/container platform that can run `npm run build` then
+`npm run start`. Set every variable from `.env.local.example` as real
+environment variables in your hosting provider's dashboard (never commit
+`.env.local`).
+
+### Leaderboard (Supabase) - go live
+
+The leaderboard code is already fully wired (`lib/supabase.ts`,
+`lib/leaderboard.ts`, `components/Leaderboard.tsx`) and silently falls back
+to "local only" when unconfigured - turning it on is pure configuration,
+no code changes needed:
+
+1. Create a free project at <https://supabase.com>.
+2. Open the SQL Editor and run the contents of `db/schema.sql`.
+3. Copy **Project URL**, **anon public** key, and **service_role** key from
+   **Project Settings > API** into your production environment as
+   `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, and
+   `SUPABASE_SERVICE_ROLE_KEY`.
+4. Redeploy. The "Global leaderboard requires Supabase" placeholder in
+   `components/Leaderboard.tsx` will disappear and start showing real
+   scores immediately.
+5. The RLS policies shipped in `db/schema.sql` are permissive stubs
+   appropriate for a casual, low-stakes game (anyone can insert a
+   leaderboard entry). Tighten them (rate limiting, `auth.uid()` scoping)
+   before relying on this for anything competitive/real-money.
+
+### Ads - go live
+
+See the "Ads" section above - set `NEXT_PUBLIC_ADSENSE_CLIENT_ID`,
+`NEXT_PUBLIC_ADSENSE_BANNER_SLOT_ID`, and
+`NEXT_PUBLIC_ADSENSE_INTERSTITIAL_SLOT_ID` once your AdSense account and ad
+units are approved.
+
+### Remaining setup to go live
 
 - [ ] Add a real `OPENAI_API_KEY` with billing enabled for production
       traffic volume.
@@ -226,9 +285,13 @@ to change.
       people to `data/people.json`. Note: Logos resolve from Wikidata's P154
       (logo image) claim rather than P18, since that's where brand artwork
       lives.
-- [ ] (Optional) Set up Supabase and tighten the RLS policies in
-      `db/schema.sql` for your actual abuse-prevention needs.
-- [ ] (Optional) Apply for a Google AdSense account and set
-      `NEXT_PUBLIC_ADSENSE_CLIENT_ID` to monetize with real ads.
+- [ ] Set up Supabase (see above) for a persistent, cross-device
+      leaderboard, and tighten the RLS policies in `db/schema.sql` for your
+      actual abuse-prevention needs.
+- [ ] Apply for a Google AdSense account and set `NEXT_PUBLIC_ADSENSE_CLIENT_ID`
+      + the two ad unit slot IDs (see "Ads" above) to monetize with real ads.
 - [ ] Replace the placeholder PWA icons in `public/icons/` with real branded
       artwork (192x192 and 512x512 PNGs).
+- [ ] Point a custom domain at your deployment and verify it in both
+      AdSense and (if used) Google Search Console.
+

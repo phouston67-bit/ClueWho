@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -27,9 +28,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
+
   return (
     <html lang="en">
       <body>
+        {/* Loads Google's AdSense script once, site-wide, only when a real
+            client ID is configured - see components/AdSlot.tsx and the
+            README's "Ads" section. */}
+        {adsenseClientId && (
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
         <div className="mx-auto flex min-h-screen w-full max-w-lg flex-col px-4 pb-6 pt-[env(safe-area-inset-top)]">
           {children}
         </div>
