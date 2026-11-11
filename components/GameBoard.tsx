@@ -9,13 +9,17 @@ import ScoreSummary from "@/components/ScoreSummary";
 import StreakBadge from "@/components/StreakBadge";
 import AdSlot from "@/components/AdSlot";
 import Leaderboard from "@/components/Leaderboard";
+import HintPanel from "@/components/HintPanel";
+import PointsMeter from "@/components/PointsMeter";
 import type { PersonImage, ScoreBreakdownDTO } from "@/lib/types";
 import { recordLeaderboardEntry } from "@/lib/leaderboard";
+import { SCORING_RULES } from "@/lib/scoring";
 
-const STREAK_KEY = "cluewho_streak";
-const BEST_STREAK_KEY = "cluewho_best_streak";
-const DISPLAY_NAME_KEY = "cluewho_display_name";
-const RECENT_PEOPLE_KEY = "cluewho_recent_people";
+const STREAK_KEY = "10clues_streak";
+const BEST_STREAK_KEY = "10clues_best_streak";
+const DISPLAY_NAME_KEY = "10clues_display_name";
+const RECENT_PEOPLE_KEY = "10clues_recent_people";
+const HINTS_REMAINING_KEY = "10clues_hints_remaining";
 /**
  * How many recently-revealed person ids to keep excluding from future
  * picks. Capped (rather than unbounded) so the exclusion list doesn't grow
@@ -32,11 +36,13 @@ interface RoundState {
   category: string;
   image: PersonImage;
   maxQuestions: number;
+  startedAt: number;
   questions: AnsweredQuestion[];
   questionsUsed: number;
   questionsRemaining: number;
   wrongGuesses: number;
   lastGuessWrong: boolean;
+  hints: string[];
 }
 
 interface RevealState {
@@ -46,6 +52,8 @@ interface RevealState {
   revealFact: string;
   image: PersonImage;
   score: ScoreBreakdownDTO;
+  /** The player's streak going into this round - needed by ScoreSummary's share-on-loss copy. */
+  streakBeforeRound: number;
 }
 
 function readNumber(key: string): number {
@@ -53,6 +61,14 @@ function readNumber(key: string): number {
   const raw = window.localStorage.getItem(key);
   const parsed = raw ? parseInt(raw, 10) : 0;
   return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function readHintsRemaining(): number {
+  if (typeof window === "undefined") return SCORING_RULES.MAX_HINTS_PER_STREAK;
+  const raw = window.localStorage.getItem(HINTS_REMAINING_KEY);
+  if (raw === null) return SCORING_RULES.MAX_HINTS_PER_STREAK;
+  const parsed = parseInt(raw, 10);
+  return Number.isFinite(parsed) ? parsed : SCORING_RULES.MAX_HINTS_PER_STREAK;
 }
 
 function readRecentPersonIds(): string[] {
@@ -95,9 +111,14 @@ export default function GameBoard() {
   const [streak, setStreak] = useState(0);
   const [bestStreak, setBestStreak] = useState(0);
   const [recentPersonIds, setRecentPersonIds] = useState<string[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
+  const [hintsRemainingInStreak, setHintsRemainingInStreak] = useState<number>(
+    SCORING_RULES.MAX_HINTS_PER_STREAK
+  );
   const [startLoading, setStartLoading] = useState(false);
   const [askLoading, setAskLoading] = useState(false);
   const [guessLoading, setGuessLoading] = useState(false);
+  const [hintLoading, setHintLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const wrongGuessTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -114,6 +135,7 @@ export default function GameBoard() {
     setStreak(readNumber(STREAK_KEY));
     setBestStreak(readNumber(BEST_STREAK_KEY));
     setRecentPersonIds(readRecentPersonIds());
+    setHintsRemainingInStreak(readHintsRemaining());
   }, []);
 
   const persistStreaks = useCallback((nextStreak: number, nextBest: number) => {
@@ -123,16 +145,23 @@ export default function GameBoard() {
     window.localStorage.setItem(BEST_STREAK_KEY, String(nextBest));
   }, []);
 
+  const persistHintsRemaining = useCallback((next: number) => {
+    setHintsRemainingInStreak(next);
+    window.localStorage.setItem(HINTS_REMAINING_KEY, String(next));
+  }, []);
+
   const startRound = useCallback(
     async (category?: string) => {
       setError(null);
       setStartLoading(true);
+      setSelectedCategory(category);
       try {
         const data = await postJson<{
           roundToken: string;
           category: string;
           image: PersonImage;
           maxQuestions: number;
+          startedAt: number;
         }>("/api/round/start", {
           category,
           currentStreak: streak,
@@ -143,11 +172,13 @@ export default function GameBoard() {
           category: data.category,
           image: data.image,
           maxQuestions: data.maxQuestions,
+          startedAt: data.startedAt,
           questions: [],
           questionsUsed: 0,
           questionsRemaining: data.maxQuestions,
           wrongGuesses: 0,
           lastGuessWrong: false,
+          hints: [],
         });
         setReveal(null);
         setPhase("playing");
@@ -161,8 +192,9 @@ export default function GameBoard() {
   );
 
   const finishRound = useCallback(
-    (result: RevealState) => {
-      setReveal(result);
+    (result: Omit<RevealState, "streakBeforeRound">) => {
+      const streakBeforeRound = streak;
+      setReveal({ ...result, streakBeforeRound });
       setPhase("revealed");
 
       const won = result.score.won;
@@ -170,6 +202,13 @@ export default function GameBoard() {
       const nextBest = Math.max(bestStreak, nextStreak);
       persistStreaks(nextStreak, nextBest);
       setRecentPersonIds((current) => rememberRecentPersonId(result.id, current));
+
+      // The hint pool refills per streak (not per round): a loss resets it
+      // back to full for the next streak attempt, a win carries whatever
+      // the player has left into the next round of the same streak.
+      if (!won) {
+        persistHintsRemaining(SCORING_RULES.MAX_HINTS_PER_STREAK);
+      }
 
       const displayName =
         window.localStorage.getItem(DISPLAY_NAME_KEY) || "Anonymous";
@@ -180,7 +219,7 @@ export default function GameBoard() {
         category: result.category,
       });
     },
-    [bestStreak, persistStreaks]
+    [streak, bestStreak, persistStreaks, persistHintsRemaining]
   );
 
   const revealRound = useCallback(
@@ -302,7 +341,40 @@ export default function GameBoard() {
     [round, finishRound]
   );
 
-  const playAgain = useCallback(() => {
+  const requestHint = useCallback(async () => {
+    if (!round || hintsRemainingInStreak <= 0) return;
+    setError(null);
+    setHintLoading(true);
+    try {
+      const data = await postJson<{
+        roundToken: string;
+        hint: string;
+        hintsUsed: number;
+        hintPenalty: number;
+      }>("/api/round/hint", { roundToken: round.roundToken });
+
+      setRound({
+        ...round,
+        roundToken: data.roundToken,
+        hints: [...round.hints, data.hint],
+      });
+      persistHintsRemaining(Math.max(0, hintsRemainingInStreak - 1));
+    } catch (err) {
+      setError((err as Error).message);
+    } finally {
+      setHintLoading(false);
+    }
+  }, [round, hintsRemainingInStreak, persistHintsRemaining]);
+
+  const watchAdForHint = useCallback(() => {
+    persistHintsRemaining(hintsRemainingInStreak + 1);
+  }, [hintsRemainingInStreak, persistHintsRemaining]);
+
+  const goToNextRound = useCallback(() => {
+    void startRound(selectedCategory);
+  }, [startRound, selectedCategory]);
+
+  const changeCategory = useCallback(() => {
     setPhase("picking");
     setRound(null);
     setReveal(null);
@@ -316,7 +388,9 @@ export default function GameBoard() {
 
   return (
     <div className="flex flex-1 flex-col gap-5 py-4">
-      <StreakBadge streak={streak} bestStreak={bestStreak} />
+      {phase !== "playing" && (
+        <StreakBadge streak={streak} bestStreak={bestStreak} />
+      )}
 
       {error && (
         <p className="rounded-xl border border-rose-500/30 bg-rose-500/10 px-3 py-2 text-center text-sm text-rose-300">
@@ -332,9 +406,25 @@ export default function GameBoard() {
         <div className="flex flex-col gap-4 animate-fade-in">
           <ImageReveal image={round.image} category={round.category} />
 
-          <QuestionList
-            questions={round.questions}
-            maxQuestions={round.maxQuestions}
+          <PointsMeter
+            startedAt={round.startedAt}
+            questionsUsed={round.questionsUsed}
+            wrongGuesses={round.wrongGuesses}
+            hintsUsed={round.hints.length}
+            streakBeforeRound={streak}
+            active
+          />
+
+          <QuestionList questions={round.questions} />
+
+          <HintPanel
+            hints={round.hints}
+            hintsRemainingInStreak={hintsRemainingInStreak}
+            maxHintsPerStreak={SCORING_RULES.MAX_HINTS_PER_STREAK}
+            onRequestHint={requestHint}
+            onWatchAdForHint={watchAdForHint}
+            loading={hintLoading}
+            disabled={askLoading || guessLoading}
           />
 
           <AskOrGuessInput
@@ -350,9 +440,9 @@ export default function GameBoard() {
           <button
             type="button"
             onClick={giveUp}
-            className="text-center text-xs text-slate-500 underline-offset-2 hover:underline"
+            className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed border-red-300 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700 transition hover:border-red-400 hover:bg-red-100 active:scale-[0.98] dark:border-red-900 dark:bg-red-950/40 dark:text-red-400 dark:hover:bg-red-950/60"
           >
-            Give up &amp; reveal
+            🏳️ I give up... show me the answer
           </button>
         </div>
       )}
@@ -368,19 +458,23 @@ export default function GameBoard() {
           <ScoreSummary
             score={reveal.score}
             revealFact={reveal.revealFact}
-            onPlayAgain={playAgain}
+            streakBeforeRound={reveal.streakBeforeRound}
+            onNext={goToNextRound}
+            onChangeCategory={changeCategory}
           />
         </div>
       )}
 
-      <AdSlot slot="banner" />
+      {phase !== "revealed" && phase !== "playing" && <AdSlot slot="banner" />}
 
-      <div className="mt-2 flex flex-col gap-2">
-        <h2 className="text-center text-xs font-semibold uppercase tracking-wide text-slate-500">
-          Leaderboard
-        </h2>
-        <Leaderboard />
-      </div>
+      {phase !== "playing" && (
+        <div className="mt-2 flex flex-col gap-2">
+          <h2 className="text-center text-xs font-semibold uppercase tracking-wide text-slate-500">
+            Leaderboard
+          </h2>
+          <Leaderboard />
+        </div>
+      )}
     </div>
   );
 }

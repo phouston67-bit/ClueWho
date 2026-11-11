@@ -16,7 +16,9 @@
  *  1. Resolve a Wikidata QID - either the `wikidataId` already set on the
  *     person, or by searching Wikidata by name (wbsearchentities),
  *     preferring results that are "instance of" human (P31 -> Q5).
- *  2. Fetch that entity's P18 (image) claim, which points to a Commons file.
+ *  2. Fetch that entity's P18 (image) claim, which points to a Commons file
+ *     (for the "Logos" category, P154 (logo image) is tried first instead,
+ *     since a brand's logo artwork lives on P154, falling back to P18).
  *  3. Resolve the Commons file via the Commons API's `imageinfo` action,
  *     requesting `extmetadata`, to get the direct file URL, license short
  *     name, and a ready-to-display attribution/credit string.
@@ -37,7 +39,7 @@ import type { Person } from "../lib/types";
 
 const DATA_PATH = path.resolve(__dirname, "../data/people.json");
 const USER_AGENT =
-  "ClueWho-SeedScript/1.0 (https://github.com/phouston67-bit/ClueWho; contact via GitHub issues)";
+  "10Clues-SeedScript/1.0 (https://github.com/phouston67-bit/ClueWho; contact via GitHub issues)";
 const FORCE = process.argv.includes("--force");
 
 interface WikidataSearchResult {
@@ -86,22 +88,37 @@ async function fetchJson<T>(url: string): Promise<T> {
   return (await res.json()) as T;
 }
 
-/** Search Wikidata for a human entity matching `name`, preferring exact P31=Q5 matches. */
-async function searchWikidataQid(name: string): Promise<string | null> {
+/** Search Wikidata for an entity matching `name`. For person categories,
+ *  prefers the first candidate that is "instance of" human (P31 -> Q5),
+ *  since common names (e.g. athletes, musicians) often collide with
+ *  unrelated human namesakes ranked lower by Wikidata's search. For
+ *  non-person categories (Landmarks, Stadiums, Logos), this preference is
+ *  skipped entirely and the top search result is used directly - searching
+ *  for a human match there actively causes wrong results (e.g. "Puma" would
+ *  resolve to the cougar/animal taxon over the Puma brand, "Anfield" would
+ *  resolve to an unrelated e-sports player over the football stadium, and
+ *  "Taj Mahal" would resolve to the blues musician over the monument). */
+async function searchWikidataQid(
+  name: string,
+  preferHuman = true
+): Promise<string | null> {
   const searchUrl =
     `https://www.wikidata.org/w/api.php?action=wbsearchentities&search=` +
     `${encodeURIComponent(name)}&language=en&type=item&limit=5&format=json`;
   const result = await fetchJson<WikidataSearchResult>(searchUrl);
   if (!result.search || result.search.length === 0) return null;
 
-  // Check each candidate (in rank order) for "instance of human" (P31 -> Q5),
-  // and prefer the first one that qualifies.
-  for (const candidate of result.search) {
-    const isHuman = await isWikidataHuman(candidate.id);
-    if (isHuman) return candidate.id;
+  if (preferHuman) {
+    // Check each candidate (in rank order) for "instance of human" (P31 -> Q5),
+    // and prefer the first one that qualifies.
+    for (const candidate of result.search) {
+      const isHuman = await isWikidataHuman(candidate.id);
+      if (isHuman) return candidate.id;
+    }
   }
-  // Fall back to the top search result even if we couldn't confirm P31=Q5
-  // (e.g. the claim is missing or differently structured).
+  // Fall back to (or, for non-person categories, always use) the top search
+  // result even if we couldn't confirm P31=Q5 (e.g. the claim is missing or
+  // differently structured).
   return result.search[0].id;
 }
 
@@ -126,13 +143,22 @@ async function fetchWikidataEntity(qid: string): Promise<WikidataEntityResponse>
   return fetchJson<WikidataEntityResponse>(url);
 }
 
-/** Resolve a Wikidata QID's P18 (image) claim to a Commons file name. */
-async function getCommonsFileName(qid: string): Promise<string | null> {
+/** Resolve a Wikidata QID's image claim to a Commons file name.
+ *  Prefers P154 (logo image) when `preferLogo` is set (used for the "Logos"
+ *  category, since a brand's logo artwork lives on P154, not the P18 photo
+ *  claim used for people/places), falling back to P18 either way. */
+async function getCommonsFileName(
+  qid: string,
+  preferLogo = false
+): Promise<string | null> {
   const entity = await fetchWikidataEntity(qid);
   const claims = entity.entities[qid]?.claims ?? {};
-  const imageClaims = claims["P18"] ?? [];
-  const value = imageClaims[0]?.mainsnak?.datavalue?.value;
-  return typeof value === "string" ? value : null;
+  const propertyOrder = preferLogo ? ["P154", "P18"] : ["P18", "P154"];
+  for (const property of propertyOrder) {
+    const value = (claims[property] ?? [])[0]?.mainsnak?.datavalue?.value;
+    if (typeof value === "string") return value;
+  }
+  return null;
 }
 
 interface ResolvedImage {
@@ -192,18 +218,25 @@ function needsSeeding(person: Person): boolean {
   );
 }
 
+/** Categories whose subject is a place/brand, not a person - see
+ *  `searchWikidataQid`'s doc comment for why these must skip the
+ *  "prefer human" search heuristic. */
+const NON_PERSON_CATEGORIES = new Set(["Landmarks", "Stadiums", "Logos"]);
+
 async function seedPerson(person: Person): Promise<Person> {
   try {
-    const qid = person.wikidataId ?? (await searchWikidataQid(person.name));
+    const preferHuman = !NON_PERSON_CATEGORIES.has(person.category);
+    const qid =
+      person.wikidataId ?? (await searchWikidataQid(person.name, preferHuman));
     if (!qid) {
       console.warn(`  [skip] No Wikidata entity found for "${person.name}".`);
       return person;
     }
 
-    const fileName = await getCommonsFileName(qid);
+    const fileName = await getCommonsFileName(qid, person.category === "Logos");
     if (!fileName) {
       console.warn(
-        `  [skip] "${person.name}" (${qid}) has no P18 image claim on Wikidata.`
+        `  [skip] "${person.name}" (${qid}) has no P18/P154 image claim on Wikidata.`
       );
       return { ...person, wikidataId: qid };
     }

@@ -17,21 +17,15 @@ const ANSWER_STYLES: Record<AnswerLabel, string> = {
 
 interface QuestionListProps {
   questions: AnsweredQuestion[];
-  maxQuestions: number;
 }
 
 /** Scrollable log of the player's asked questions and the AI's constrained answers. */
-export default function QuestionList({
-  questions,
-  maxQuestions,
-}: QuestionListProps) {
+export default function QuestionList({ questions }: QuestionListProps) {
+  // No empty-state card here - AskOrGuessInput's label already explains
+  // how to ask a question, so an extra placeholder card before the first
+  // question would just be redundant clutter.
   if (questions.length === 0) {
-    return (
-      <p className="rounded-xl border border-dashed border-slate-800 px-3 py-4 text-center text-sm text-slate-500">
-        Ask a yes/no question to get your first clue. You have{" "}
-        {maxQuestions} questions.
-      </p>
-    );
+    return null;
   }
 
   return (

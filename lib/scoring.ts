@@ -1,5 +1,5 @@
 /**
- * Pure scoring + streak math for ClueWho rounds.
+ * Pure scoring + streak math for 10Clues rounds.
  *
  * Kept free of any I/O so it can be unit tested in isolation and reused by
  * both the API routes (server authoritative score) and the client (optimistic
@@ -15,6 +15,10 @@ export const SCORING_RULES = {
   PER_SECOND_PENALTY: 4,
   /** Extra "effective seconds" added to the elapsed-time penalty per wrong guess. */
   WRONG_GUESS_PENALTY_SECONDS: 10,
+  /** Points subtracted per hint the player requested. */
+  PER_HINT_PENALTY: 50,
+  /** Maximum hints a player may use across the rounds in a single streak. */
+  MAX_HINTS_PER_STREAK: 5,
   /** A correct guess always nets at least this many points. */
   MIN_SCORE_ON_WIN: 100,
   /** Streak multiplier granted per consecutive win, e.g. 0.1 = +10%. */
@@ -22,16 +26,18 @@ export const SCORING_RULES = {
   /** Maximum streak multiplier bonus, e.g. 1.0 = capped at +100% (2x total). */
   MAX_STREAK_MULTIPLIER_BONUS: 1.0,
   /** Maximum number of questions allowed per round. */
-  MAX_QUESTIONS: 5,
+  MAX_QUESTIONS: 10,
 } as const;
 
 export interface ScoreInput {
-  /** Number of questions asked before the round ended (0-5). */
+  /** Number of questions asked before the round ended (0-10). */
   questionsUsed: number;
   /** Whole seconds elapsed between round start and the scoring event. */
   elapsedSeconds: number;
   /** Number of incorrect guesses submitted during the round. */
   wrongGuesses: number;
+  /** Number of hints requested during the round. Defaults to 0. */
+  hintsUsed?: number;
   /** Whether the round ended in a correct guess. */
   won: boolean;
   /** The player's consecutive-win streak *before* this round is applied. */
@@ -42,6 +48,7 @@ export interface ScoreBreakdown {
   baseScore: number;
   questionPenalty: number;
   timePenalty: number;
+  hintPenalty: number;
   wrongGuessPenaltySeconds: number;
   preMultiplierScore: number;
   streakMultiplier: number;
@@ -84,8 +91,10 @@ export function calculateRoundScore(input: ScoreInput): ScoreBreakdown {
   );
   const elapsedSeconds = Math.max(0, input.elapsedSeconds);
   const wrongGuesses = Math.max(0, Math.round(input.wrongGuesses));
+  const hintsUsed = Math.max(0, Math.round(input.hintsUsed ?? 0));
 
   const questionPenalty = questionsUsed * SCORING_RULES.PER_QUESTION_PENALTY;
+  const hintPenalty = hintsUsed * SCORING_RULES.PER_HINT_PENALTY;
   const wrongGuessPenaltySeconds =
     wrongGuesses * SCORING_RULES.WRONG_GUESS_PENALTY_SECONDS;
   const effectiveSeconds = elapsedSeconds + wrongGuessPenaltySeconds;
@@ -98,6 +107,7 @@ export function calculateRoundScore(input: ScoreInput): ScoreBreakdown {
       baseScore: SCORING_RULES.BASE_SCORE,
       questionPenalty,
       timePenalty,
+      hintPenalty,
       wrongGuessPenaltySeconds,
       preMultiplierScore: 0,
       streakMultiplier: 1,
@@ -107,7 +117,8 @@ export function calculateRoundScore(input: ScoreInput): ScoreBreakdown {
     };
   }
 
-  const rawScore = SCORING_RULES.BASE_SCORE - questionPenalty - timePenalty;
+  const rawScore =
+    SCORING_RULES.BASE_SCORE - questionPenalty - timePenalty - hintPenalty;
   const preMultiplierScore = Math.max(rawScore, SCORING_RULES.MIN_SCORE_ON_WIN);
 
   const newStreak = Math.max(0, input.streakBeforeRound) + 1;
@@ -118,6 +129,7 @@ export function calculateRoundScore(input: ScoreInput): ScoreBreakdown {
     baseScore: SCORING_RULES.BASE_SCORE,
     questionPenalty,
     timePenalty,
+    hintPenalty,
     wrongGuessPenaltySeconds,
     preMultiplierScore,
     streakMultiplier,

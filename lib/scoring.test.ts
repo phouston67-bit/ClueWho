@@ -114,6 +114,32 @@ describe("calculateRoundScore", () => {
     expect(result.won).toBe(false);
   });
 
+  it("subtracts a per-hint penalty from a winning round", () => {
+    const result = calculateRoundScore({
+      questionsUsed: 0,
+      elapsedSeconds: 0,
+      wrongGuesses: 0,
+      hintsUsed: 2,
+      won: true,
+      streakBeforeRound: 0,
+    });
+    expect(result.hintPenalty).toBe(2 * SCORING_RULES.PER_HINT_PENALTY);
+    expect(result.finalScore).toBe(
+      SCORING_RULES.BASE_SCORE - 2 * SCORING_RULES.PER_HINT_PENALTY
+    );
+  });
+
+  it("defaults hintsUsed to 0 when omitted", () => {
+    const result = calculateRoundScore({
+      questionsUsed: 0,
+      elapsedSeconds: 0,
+      wrongGuesses: 0,
+      won: true,
+      streakBeforeRound: 0,
+    });
+    expect(result.hintPenalty).toBe(0);
+  });
+
   it("never returns a negative score for an extreme slow win", () => {
     const result = calculateRoundScore({
       questionsUsed: 5,

@@ -1,8 +1,9 @@
-# ClueWho
+# 10Clues
 
-A mobile-first, Guess-Who-style celebrity guessing game. Pick a category, get a
-secret photo, ask up to 5 yes/no questions (answered by an AI grounded in a
-curated fact sheet), then guess who it is before time and questions run out.
+A mobile-first, Guess-Who-style guessing game covering famous people, places,
+and brands. Pick a category, get a secret photo, ask up to 10 yes/no questions
+(answered by an AI grounded in a curated fact sheet), then guess who or what
+it is before time and questions run out.
 
 Built with **Next.js 16 (App Router, TypeScript)**, **Tailwind CSS**, the
 **OpenAI API** (`gpt-4o-mini` with structured output), and optional
@@ -11,11 +12,12 @@ Built with **Next.js 16 (App Router, TypeScript)**, **Tailwind CSS**, the
 ## How it works
 
 1. **Pick a category** (TV & Film, Musicians, Athletes, Football, Historical
-   Figures, Scientists, Politicians, Business Leaders) or hit "Surprise me".
+   Figures, Scientists, Politicians, Business Leaders, Landmarks, Stadiums,
+   Logos) or hit "All Categories".
 2. The server (`POST /api/round/start`) secretly picks a person from
    `data/people.json` and returns only their **photo + category** - never
    the name or facts - plus an opaque, signed round token.
-3. Ask up to **5 free-text yes/no questions** (`POST /api/round/ask`). Each
+3. Ask up to **10 free-text yes/no questions** (`POST /api/round/ask`). Each
    question is sent to OpenAI (`gpt-4o-mini`) along with that person's
    server-only fact sheet as a grounding system prompt, and the model must
    respond with a strictly constrained **Yes / No / Sometimes / Unclear**
@@ -24,7 +26,7 @@ Built with **Next.js 16 (App Router, TypeScript)**, **Tailwind CSS**, the
 4. **Guess at any time** (`POST /api/round/guess`) via fuzzy string matching
    (Sørensen-Dice coefficient) - guessing never consumes a question, but each
    wrong guess adds a small time penalty.
-5. On a correct guess, or once all 5 questions are used
+5. On a correct guess, or once all 10 questions are used
    (`POST /api/round/reveal`), the round ends: the person's name, photo, and
    a fun fact are revealed, along with a full score breakdown.
 
@@ -67,7 +69,7 @@ lib/
   people.ts       # Server-only dataset access
   leaderboard.ts  # Best-effort client-side leaderboard read/write
   types.ts        # Shared domain types
-data/people.json          # Curated dataset (~240 people across 8 categories)
+data/people.json          # Curated dataset (365 people across 11 categories)
 scripts/seed-people.ts    # Resolves real licensed photos from Wikidata/Commons
 db/schema.sql             # Optional Supabase schema + RLS policy stubs
 ```
@@ -117,20 +119,26 @@ anyone can read the leaderboard). Tighten them (e.g. scope to
 
 ### 4. Seed real, licensed photos
 
-`data/people.json` ships with ~240 people across 8 categories (30 each),
-but the `image` field starts as a `TODO`
-placeholder (the app shows a 🕵️ silhouette card instead of a photo until
-seeded). Run:
+`data/people.json` ships with 365 people across 11 categories (50 each for
+TV & Film/Musicians/Athletes/Football, 30 each for Historical Figures/
+Scientists/Politicians/Business Leaders, 15 each for Landmarks/Stadiums/
+Logos), and every entry already has a real, licensed photo resolved via
+Wikidata + Wikimedia Commons (see below) - no seeding is required before you
+can play. Re-run `npm run seed` any time you add new people to the dataset
+(it only re-resolves entries with a missing/`TODO` image, so it's always
+safe and cheap to run) or want to refresh existing ones with `--force`:
 
 ```bash
-npm run seed
+npm run seed              # resolve images for any newly-added people only
+npm run seed -- --force   # re-resolve every person's image from scratch
 ```
 
-This resolves each person's photo via **Wikidata's `P18` (image) claim**,
-then the **Wikimedia Commons API** for the direct file URL, a license short
-name, and a ready-to-display attribution string - written back into
-`data/people.json`. We deliberately only use Commons (not arbitrary Wikipedia
-article images), because Commons only hosts freely-licensed or public-domain
+This resolves each person's photo via **Wikidata's `P18` (image) claim**
+(or `P154`, logo image, for the Logos category), then the **Wikimedia
+Commons API** for the direct file URL, a license short name, and a
+ready-to-display attribution string - written back into `data/people.json`.
+We deliberately only use Commons (not arbitrary Wikipedia article images),
+because Commons only hosts freely-licensed or public-domain
 media with machine-readable attribution; Wikipedia articles sometimes display
 non-free "fair use" images (e.g. film stills, book covers) that are legal for
 Wikipedia to show in context but **not** safe for a third party to
@@ -212,11 +220,12 @@ to change.
 - [ ] Add a real `OPENAI_API_KEY` with billing enabled for production
       traffic volume.
 - [ ] Set a strong, unique `SESSION_SECRET` in your production environment.
-- [ ] `npm run seed` has already been run once (239/240 people have real,
-      licensed Commons photos). `Cleopatra` has no free-use image on
-      Wikidata and still shows the placeholder card - either accept this,
-      pick a different person for that slot, or manually source/attribute a
-      public-domain image and set it directly in `data/people.json`.
+- [ ] `npm run seed` has been run for the full 365-person roster - all 365
+      now have resolved, real, licensed Commons photos (0 TODO placeholders
+      remaining). Re-run it (needs network access) any time you add more
+      people to `data/people.json`. Note: Logos resolve from Wikidata's P154
+      (logo image) claim rather than P18, since that's where brand artwork
+      lives.
 - [ ] (Optional) Set up Supabase and tighten the RLS policies in
       `db/schema.sql` for your actual abuse-prevention needs.
 - [ ] (Optional) Apply for a Google AdSense account and set

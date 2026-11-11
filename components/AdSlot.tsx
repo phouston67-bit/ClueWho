@@ -20,10 +20,12 @@ export default function AdSlot({
   slot?: "banner" | "interstitial";
 }) {
   const clientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
+  const sizeClasses =
+    slot === "interstitial" ? "min-h-[160px]" : "min-h-[60px]";
 
   return (
     <div
-      className="flex min-h-[60px] w-full items-center justify-center rounded-xl border border-dashed border-slate-800 bg-slate-900/40 text-xs text-slate-600"
+      className={`flex w-full items-center justify-center rounded-xl border border-dashed border-slate-800 bg-slate-900/40 text-xs text-slate-600 ${sizeClasses}`}
       data-ad-slot={slot}
       data-ad-client={clientId ?? "unconfigured"}
     >

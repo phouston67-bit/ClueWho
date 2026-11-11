@@ -24,6 +24,7 @@ const config: Config = {
       animation: {
         "fade-in": "fadeIn 0.3s ease-in-out",
         "pop": "pop 0.25s ease-in-out",
+        "ad-progress": "adProgress linear forwards",
       },
       keyframes: {
         fadeIn: {
@@ -34,6 +35,10 @@ const config: Config = {
           "0%": { transform: "scale(0.95)" },
           "60%": { transform: "scale(1.03)" },
           "100%": { transform: "scale(1)" },
+        },
+        adProgress: {
+          "0%": { transform: "scaleX(0)" },
+          "100%": { transform: "scaleX(1)" },
         },
       },
     },

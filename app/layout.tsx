@@ -2,15 +2,15 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ClueWho — Guess the Celebrity",
+  title: "10Clues — Guess Who or What",
   description:
-    "A mobile-first, Guess-Who-style game: ask yes/no questions and guess the famous person.",
+    "A mobile-first, Guess-Who-style game: ask yes/no questions and guess the famous person, place, or brand.",
   manifest: "/manifest.json",
-  applicationName: "ClueWho",
+  applicationName: "10Clues",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "ClueWho",
+    title: "10Clues",
   },
 };
 

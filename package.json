@@ -1,8 +1,8 @@
 {
-  "name": "cluewho",
+  "name": "10clues",
   "version": "1.0.0",
   "private": true,
-  "description": "ClueWho - a mobile-first, Guess-Who-style celebrity guessing game powered by OpenAI.",
+  "description": "10Clues - a mobile-first, Guess-Who-style guessing game (people, places, and brands) powered by OpenAI.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

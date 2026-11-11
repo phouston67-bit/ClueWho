@@ -1,4 +1,4 @@
--- ClueWho Supabase schema
+-- 10Clues Supabase schema
 --
 -- Supabase is optional: the game is fully playable without it (round state
 -- lives in signed tokens, score/streak live in client state/localStorage).

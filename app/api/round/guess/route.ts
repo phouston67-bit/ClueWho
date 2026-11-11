@@ -58,6 +58,7 @@ export async function POST(req: NextRequest) {
     questionsUsed: payload.questionsUsed,
     elapsedSeconds,
     wrongGuesses: payload.wrongGuesses,
+    hintsUsed: payload.hintsUsed,
     won: true,
     streakBeforeRound: payload.streakBeforeRound,
   });

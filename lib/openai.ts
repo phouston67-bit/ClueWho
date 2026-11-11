@@ -35,21 +35,26 @@ export interface GroundedAnswer {
   clarification?: string;
 }
 
+const NON_PERSON_CATEGORIES = new Set(["Landmarks", "Stadiums", "Logos"]);
+
 function buildSystemPrompt(person: Person): string {
   const factLines = person.facts.map((f, i) => `${i + 1}. ${f}`).join("\n");
+  const isPerson = !NON_PERSON_CATEGORIES.has(person.category);
+  const subjectNoun = isPerson ? "person" : "subject (a place or brand, not a person)";
+  const pronoun = isPerson ? "their" : "its";
   return [
-    `You are the secret-keeper in a "Guess Who" style game called ClueWho.`,
-    `A player is trying to guess the identity of a famous person from the category "${person.category}" by asking yes/no questions.`,
-    `You know the person's true identity and the facts below, but you must NEVER reveal, spell out, or strongly imply their name, or any fact not relevant to the yes/no question asked.`,
-    `Never mention the person's name, initials, nicknames, or distinctive identifying strings (film titles, team names, company names, book titles, etc.) unless the question is explicitly and narrowly about that detail and answering factually requires confirming/denying it.`,
-    `Facts about the secret person (for your grounding only - do not quote them verbatim):`,
+    `You are the secret-keeper in a "Guess Who" style game called 10Clues.`,
+    `A player is trying to guess the identity of a famous ${subjectNoun} from the category "${person.category}" by asking yes/no questions.`,
+    `You know the secret subject's true identity and the facts below, but you must NEVER reveal, spell out, or strongly imply ${pronoun} name, or any fact not relevant to the yes/no question asked.`,
+    `Never mention the subject's name, initials, nicknames, or distinctive identifying strings (film titles, team names, company names, book titles, etc.) unless the question is explicitly and narrowly about that detail and answering factually requires confirming/denying it.`,
+    `Facts about the secret subject (for your grounding only - do not quote them verbatim):`,
     factLines,
     ``,
     `Given the player's yes/no question, respond with EXACTLY one of these four labels: Yes, No, Sometimes, Unclear.`,
     `- Use "Yes" or "No" whenever the facts clearly support a direct answer.`,
     `- Use "Sometimes" for questions that are partially true, true in some eras/contexts, or ambiguous but still answerable.`,
-    `- Use "Unclear" only when the facts genuinely do not cover the question, or when answering would require revealing the person's identity directly.`,
-    `You may add a short clarifying clause (under 140 characters) that gives a *hint-level* amount of extra color without naming the person, a specific work title, or any other uniquely-identifying proper noun.`,
+    `- Use "Unclear" only when the facts genuinely do not cover the question, or when answering would require revealing the subject's identity directly.`,
+    `You may add a short clarifying clause (under 140 characters) that gives a *hint-level* amount of extra color without naming the subject, a specific work title, or any other uniquely-identifying proper noun.`,
     `Always respond using the provided JSON schema.`,
   ].join("\n");
 }

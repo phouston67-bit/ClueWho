@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, type FormEvent } from "react";
-import { isLikelyQuestion } from "@/lib/textIntent";
+import { extractGuessOverride, isLikelyQuestion } from "@/lib/textIntent";
 
 interface AskOrGuessInputProps {
   onAsk: (question: string) => Promise<void> | void;
@@ -33,7 +33,12 @@ export default function AskOrGuessInput({
 
   const loading = Boolean(askLoading || guessLoading);
   const trimmed = value.trim();
-  const asksQuestion = isLikelyQuestion(trimmed);
+  // "Is it Joan of Arc", "My guess is Beyonce", etc. always win out over the
+  // general question heuristic - they're unambiguous guess phrasing even
+  // though they start with a word ("Is") that would otherwise read as a
+  // question.
+  const guessOverride = extractGuessOverride(trimmed);
+  const asksQuestion = !guessOverride && isLikelyQuestion(trimmed);
   const outOfQuestions = questionsRemaining <= 0;
   // Out of questions, any input falls back to a guess instead of blocking.
   const willAsk = asksQuestion && !outOfQuestions;
@@ -45,7 +50,7 @@ export default function AskOrGuessInput({
     if (willAsk) {
       await onAsk(trimmed);
     } else {
-      await onGuess(trimmed);
+      await onGuess(guessOverride ?? trimmed);
     }
     setValue("");
     inputRef.current?.focus();
@@ -54,8 +59,9 @@ export default function AskOrGuessInput({
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-1.5">
       <label htmlFor="ask-or-guess" className="text-xs font-medium text-slate-400">
-        Ask a yes/no question ({questionsRemaining} left) or guess their name
-        - guessing is free{wrongGuesses > 0 ? ` · ${wrongGuesses} wrong so far` : ""}
+        {questionsRemaining} question{questionsRemaining === 1 ? "" : "s"} left
+        &middot; ask or guess their name
+        {wrongGuesses > 0 ? ` · ${wrongGuesses} wrong so far` : ""}
       </label>
       <div className="flex gap-2">
         <input
@@ -89,9 +95,11 @@ export default function AskOrGuessInput({
         <p className="text-xs text-slate-500">
           {willAsk
             ? "Reading this as a question →"
-            : outOfQuestions && asksQuestion
-              ? "Out of questions - reading this as a guess →"
-              : "Reading this as a guess →"}
+            : guessOverride
+              ? `Reading "${guessOverride}" as your guess →`
+              : outOfQuestions && isLikelyQuestion(trimmed)
+                ? "Out of questions - reading this as a guess →"
+                : "Reading this as a guess →"}
         </p>
       )}
       {lastGuessWasWrong && (

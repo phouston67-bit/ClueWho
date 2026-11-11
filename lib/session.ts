@@ -18,6 +18,7 @@ export interface RoundTokenPayload {
   category: string;
   questionsUsed: number;
   wrongGuesses: number;
+  hintsUsed: number;
   startedAt: number;
   /** Epoch ms after which the round token is no longer valid. */
   exp: number;

@@ -7,7 +7,7 @@ import { calculateRoundScore } from "@/lib/scoring";
 /**
  * POST /api/round/reveal
  *
- * Ends a round that did NOT finish via a correct guess - either all 5
+ * Ends a round that did NOT finish via a correct guess - either all
  * questions were used, or the player gave up early. Always scores as a
  * loss (0 points, streak reset to 0) and returns the person's identity so
  * the UI can show the reveal screen.
@@ -40,6 +40,7 @@ export async function POST(req: NextRequest) {
     questionsUsed: payload.questionsUsed,
     elapsedSeconds,
     wrongGuesses: payload.wrongGuesses,
+    hintsUsed: payload.hintsUsed,
     won: false,
     streakBeforeRound: payload.streakBeforeRound,
   });

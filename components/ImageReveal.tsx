@@ -6,7 +6,7 @@ import type { PersonImage } from "@/lib/types";
 interface ImageRevealProps {
   image: PersonImage;
   category: string;
-  /** When set, the round is over and the person's name is safe to show. */
+  /** When set, the round is over and the subject's name is safe to show. */
   name?: string;
   revealed?: boolean;
 }
@@ -18,9 +18,9 @@ function hasRealImage(image: PersonImage): boolean {
 }
 
 /**
- * Shows the secret person's photo (or a tasteful silhouette placeholder
+ * Shows the secret subject's photo (or a tasteful silhouette placeholder
  * before `npm run seed` has resolved a real licensed photo) plus the
- * category badge. After `revealed` is true, overlays the person's name.
+ * category badge. After `revealed` is true, overlays the subject's name.
  */
 export default function ImageReveal({
   image,
@@ -47,7 +47,7 @@ export default function ImageReveal({
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={image.commonsFileUrl}
-          alt={revealed && name ? name : `A mystery person from ${category}`}
+          alt={revealed && name ? name : `A mystery subject from ${category}`}
           className="h-full w-full object-cover"
           onError={() => setImgError(true)}
         />

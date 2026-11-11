@@ -11,6 +11,9 @@ const CATEGORY_EMOJI: Record<string, string> = {
   Scientists: "🔬",
   Politicians: "🏛️",
   "Business Leaders": "💼",
+  Landmarks: "🗼",
+  Stadiums: "🏟️",
+  Logos: "🏷️",
 };
 
 interface CategoryPickerProps {
@@ -27,11 +30,11 @@ export default function CategoryPicker({
     <div className="flex flex-col gap-4 animate-fade-in">
       <div className="text-center">
         <h1 className="text-3xl font-extrabold tracking-tight text-white">
-          Clue<span className="text-brand-400">Who</span>
+          10<span className="text-brand-400">Clues</span>
         </h1>
         <p className="mt-2 text-sm text-slate-400">
-          Pick a category. We&apos;ll secretly choose a famous person - ask up
-          to 5 yes/no questions, then guess who it is!
+          Pick a category. We&apos;ll secretly choose a famous subject - ask up
+          to 10 yes/no questions, then guess who (or what) it is!
         </p>
       </div>
 
@@ -60,8 +63,21 @@ export default function CategoryPicker({
         onClick={() => onSelect(undefined)}
         className="mt-1 rounded-2xl bg-brand-600 px-4 py-4 text-center text-base font-semibold text-white shadow-lg shadow-brand-900/40 transition active:scale-95 hover:bg-brand-500 disabled:pointer-events-none disabled:opacity-50"
       >
-        🎲 Surprise me
+        🎲 All Categories
       </button>
+
+      <details className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3 text-sm text-slate-300">
+        <summary className="cursor-pointer select-none font-semibold text-slate-200">
+          ❓ How to play
+        </summary>
+        <div className="mt-3 flex flex-col gap-2 text-slate-400">
+          <p>1. Pick a category (or All Categories to be surprised) - we secretly choose a famous subject and show you only its photo.</p>
+          <p>2. Type into the single box to either ask a yes/no question (up to 10 per round, answered Yes / No / Sometimes / Unclear) or guess the name directly - the box figures out which you mean.</p>
+          <p>3. Stuck? Spend a 💡 hint for a free fact, at the cost of some points - you get a limited pool per streak, refillable by watching an ad.</p>
+          <p>4. Guess right (or run out of questions) to reveal the answer. Scoring starts at 1000 pts and loses points for every question, hint, second elapsed, and wrong guess.</p>
+          <p>5. Consecutive correct rounds build a streak worth up to +100% bonus points - but one loss resets it to zero, so share your best streak and dare a friend to beat it!</p>
+        </div>
+      </details>
     </div>
   );
 }

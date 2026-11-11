@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
 
   let person;
   try {
-    person = pickRandomPerson(category, parsed.data.excludeIds);
+    person = pickRandomPerson(category, parsed.data.excludeIds, parsed.data.currentStreak);
   } catch (err) {
     return NextResponse.json(
       { error: (err as Error).message },
@@ -38,12 +38,14 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  const startedAt = Date.now();
   const roundToken = createRoundToken({
     personId: person.id,
     category: person.category,
     questionsUsed: 0,
     wrongGuesses: 0,
-    startedAt: Date.now(),
+    hintsUsed: 0,
+    startedAt,
     streakBeforeRound: parsed.data.currentStreak,
   });
 
@@ -52,5 +54,6 @@ export async function POST(req: NextRequest) {
     category: person.category,
     image: person.image,
     maxQuestions: SCORING_RULES.MAX_QUESTIONS,
+    startedAt,
   });
 }

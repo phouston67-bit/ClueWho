@@ -1,7 +1,7 @@
 {
-  "name": "ClueWho - Guess the Celebrity",
-  "short_name": "ClueWho",
-  "description": "A mobile-first, Guess-Who-style celebrity guessing game.",
+  "name": "10Clues - Guess Who or What",
+  "short_name": "10Clues",
+  "description": "A mobile-first, Guess-Who-style guessing game covering people, places, and brands.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",
