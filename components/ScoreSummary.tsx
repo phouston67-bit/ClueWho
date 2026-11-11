@@ -26,13 +26,18 @@ export default function ScoreSummary({
 }: ScoreSummaryProps) {
   const bonusPercent = Math.round((score.streakMultiplier - 1) * 100);
   const shareStreak = score.won ? score.newStreak : streakBeforeRound;
+  // A round that ends with a score of 0 is a loss - treat it as "Game Over"
+  // and send the player back to the category picker to start a fresh game,
+  // rather than silently dealing them another mystery image.
+  const isGameOver = !score.won;
+  const primaryAction = isGameOver ? onChangeCategory : onNext;
   const [secondsLeft, setSecondsLeft] = useState(AUTO_NEXT_SECONDS);
 
-  // Auto-advance to the next round after a few seconds, giving the ad slot
-  // below a few extra seconds of eyeball time without requiring a tap.
+  // Auto-advance after a few seconds, giving the ad slot below a few extra
+  // seconds of eyeball time without requiring a tap.
   useEffect(() => {
     if (secondsLeft <= 0) {
-      onNext();
+      primaryAction();
       return;
     }
     const timeout = setTimeout(() => setSecondsLeft((s) => s - 1), 1000);
@@ -44,7 +49,7 @@ export default function ScoreSummary({
     <div className="flex flex-col gap-4 rounded-2xl border-2 border-brand-500/40 bg-slate-900 p-4 shadow-xl shadow-brand-900/30 animate-pop">
       <div className="text-center">
         <p className="text-xs uppercase tracking-wide text-slate-500">
-          {score.won ? "You got it!" : "Round over"}
+          {score.won ? "You got it!" : "💀 Game Over"}
         </p>
         <p
           className={`mt-1 text-5xl font-extrabold drop-shadow-[0_0_12px_rgba(74,93,255,0.35)] ${
@@ -53,6 +58,11 @@ export default function ScoreSummary({
         >
           {score.finalScore} pts
         </p>
+        {isGameOver && (
+          <p className="mt-1 text-sm text-rose-300">
+            Out of questions with no guess - time to start again!
+          </p>
+        )}
       </div>
 
       {revealFact && (
@@ -104,23 +114,44 @@ export default function ScoreSummary({
             aria-hidden
             className="pointer-events-none absolute right-2 top-2 rounded-full bg-slate-950/80 px-2 py-0.5 font-mono text-[11px] font-semibold text-slate-300"
           >
-            Next in {secondsLeft}s
+            {isGameOver ? `Restart in ${secondsLeft}s` : `Next in ${secondsLeft}s`}
           </span>
         </div>
-        <button
-          type="button"
-          onClick={onNext}
-          className="text-center text-xs text-slate-500 underline-offset-2 hover:underline"
-        >
-          Skip ▶
-        </button>
-        <button
-          type="button"
-          onClick={onChangeCategory}
-          className="text-center text-xs text-slate-500 underline-offset-2 hover:underline"
-        >
-          Change category
-        </button>
+        {isGameOver ? (
+          <>
+            <button
+              type="button"
+              onClick={onChangeCategory}
+              className="rounded-xl bg-brand-500 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-brand-400 active:scale-[0.98]"
+            >
+              🔁 Start again
+            </button>
+            <button
+              type="button"
+              onClick={onNext}
+              className="text-center text-xs text-slate-500 underline-offset-2 hover:underline"
+            >
+              Play this category again
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              type="button"
+              onClick={onNext}
+              className="text-center text-xs text-slate-500 underline-offset-2 hover:underline"
+            >
+              Skip ▶
+            </button>
+            <button
+              type="button"
+              onClick={onChangeCategory}
+              className="text-center text-xs text-slate-500 underline-offset-2 hover:underline"
+            >
+              Change category
+            </button>
+          </>
+        )}
       </div>
     </div>
   );
