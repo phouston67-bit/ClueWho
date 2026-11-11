@@ -6,6 +6,8 @@
 export const CATEGORIES = [
   "Football",
   "Stadiums",
+  "Landmarks",
+  "Logos",
   "TV & Film",
   "Musicians",
   "Athletes",
@@ -13,8 +15,6 @@ export const CATEGORIES = [
   "Scientists",
   "Politicians",
   "Business Leaders",
-  "Landmarks",
-  "Logos",
 ] as const;
 
 export type Category = (typeof CATEGORIES)[number];
