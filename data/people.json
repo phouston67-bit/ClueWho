@@ -5244,12 +5244,12 @@
     "revealFact": "Strictly, 'Big Ben' is the nickname of the bell, not the tower itself.",
     "difficulty": 2,
     "image": {
-      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Groinge.jpg/960px-Groinge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Groinge.jpg",
-      "license": "CC BY-SA 3.0",
-      "attribution": "Glotz via Wikimedia Commons (Self-photographed), licensed under CC BY-SA 3.0."
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Elizabeth_Tower_and_the_north_front_of_the_Palace_of_Westminster%2C_London.jpg/960px-Elizabeth_Tower_and_the_north_front_of_the_Palace_of_Westminster%2C_London.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Elizabeth_Tower_and_the_north_front_of_the_Palace_of_Westminster,_London.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Christian David via Wikimedia Commons (Own work), licensed under CC BY-SA 4.0."
     },
-    "wikidataId": "Q2902145"
+    "wikidataId": "Q41225"
   },
   {
     "id": "leaning-tower-of-pisa",
@@ -5435,12 +5435,12 @@
     "revealFact": "Its arch stands 133 metres tall and is visible from many parts of London.",
     "difficulty": 1,
     "image": {
-      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Old_Wembley_Stadium_%28external_view%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Old_Wembley_Stadium_(external_view).jpg",
-      "license": "Public domain",
-      "attribution": "User:Gary Watson via Wikimedia Commons (User:Gary Watson), licensed under Public domain."
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/London_Wembley.jpg/960px-London_Wembley.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:London_Wembley.jpg",
+      "license": "CC BY-SA 3.0 de",
+      "attribution": "Arne Müseler via Wikimedia Commons (own work\nhttp://www.arne-mueseler.com), licensed under CC BY-SA 3.0 de."
     },
-    "wikidataId": "Q43279"
+    "wikidataId": "Q128468"
   },
   {
     "id": "camp-nou",
@@ -5479,12 +5479,12 @@
     "revealFact": "It hosted the 1950 World Cup final in front of a famously massive crowd.",
     "difficulty": 2,
     "image": {
-      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Esta%C3%A7%C3%A3o_Maracan%C3%A3_%2803-07-2014%29.jpg/960px-Esta%C3%A7%C3%A3o_Maracan%C3%A3_%2803-07-2014%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Esta%C3%A7%C3%A3o_Maracan%C3%A3_(03-07-2014).jpg",
-      "license": "CC BY 2.0 br",
-      "attribution": "Rogério Santana via Wikimedia Commons (Imprensa RJ(http://www.rj.gov.br/web/imprensa/exibeconteudo?article-id=2149555)), licensed under CC BY 2.0 br."
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Maracana_2022.jpg/960px-Maracana_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Maracana_2022.jpg",
+      "license": "CC BY-SA 3.0 de",
+      "attribution": "Arne Müseler via Wikimedia Commons (own work\nhttp://www.arne-mueseler.com), licensed under CC BY-SA 3.0 de."
     },
-    "wikidataId": "Q10275958"
+    "wikidataId": "Q155174"
   },
   {
     "id": "old-trafford",
@@ -5525,12 +5525,12 @@
     "revealFact": "It's named after Santiago Bernabéu, a former Real Madrid president and player.",
     "difficulty": 2,
     "image": {
-      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Santiago_Bernabeu.jpg/960px-Santiago_Bernabeu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Santiago_Bernabeu.jpg",
-      "license": "CC BY-SA 3.0 nl",
-      "attribution": "Nationaal Archief, Den Haag, Rijksfotoarchief: Fotocollectie Algemeen Nederlands Fotopersbureau (ANEFO), 1945-1989 - negatiefstroken zwart/wit, nummer toegang 2.24.01.05, bestanddeelnummer 924-4485 via Wikimedia Commons (Nationaal Archief Fotocollectie Anefo), licensed under CC BY-SA 3.0 nl."
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Estadio_Santiago_Bernab%C3%A9u_Madrid.jpg/960px-Estadio_Santiago_Bernab%C3%A9u_Madrid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Estadio_Santiago_Bernab%C3%A9u_Madrid.jpg",
+      "license": "CC BY 4.0",
+      "attribution": "Zoser via Wikimedia Commons (Own work), licensed under CC BY 4.0."
     },
-    "wikidataId": "Q223156"
+    "wikidataId": "Q164027"
   },
   {
     "id": "allianz-arena",
@@ -5590,12 +5590,12 @@
     "revealFact": "It's officially named Stadio Giuseppe Meazza, after a legendary Italian player.",
     "difficulty": 3,
     "image": {
-      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Neighborhood_Harar-San_Siro%2C_Milan%2C_Italy.jpg/960px-Neighborhood_Harar-San_Siro%2C_Milan%2C_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Neighborhood_Harar-San_Siro,_Milan,_Italy.jpg",
-      "license": "CC BY-SA 3.0",
-      "attribution": "FlavMi via Wikimedia Commons (Own work), licensed under CC BY-SA 3.0."
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Stadio_Meazza_2021_3.jpg/960px-Stadio_Meazza_2021_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Stadio_Meazza_2021_3.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Prelvini via Wikimedia Commons (Own work), licensed under CC BY-SA 4.0."
     },
-    "wikidataId": "Q1149910"
+    "wikidataId": "Q133566"
   },
   {
     "id": "yankee-stadium",
