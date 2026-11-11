@@ -246,6 +246,23 @@ or any Node.js host/container platform that can run `npm run build` then
 environment variables in your hosting provider's dashboard (never commit
 `.env.local`).
 
+**Deploying to Vercel (recommended, ~2 minutes):**
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/phouston67-bit/ClueWho)
+
+1. Click the button above (or go to <https://vercel.com/new>, sign in with
+   your GitHub account, and import `phouston67-bit/ClueWho`) - this step
+   requires your own GitHub login, so it can't be automated on your behalf.
+2. Vercel auto-detects Next.js; leave the default build settings.
+3. Before the first deploy (or right after, then redeploy), add the
+   environment variables from `.env.local.example` under **Settings >
+   Environment Variables**: at minimum `OPENAI_API_KEY` and
+   `SESSION_SECRET` to make the game playable; add the Supabase and AdSense
+   variables later once those accounts exist (see below).
+4. Click **Deploy**. You'll get a free `*.vercel.app` URL immediately;
+   attach a custom domain later under **Settings > Domains** (needed for
+   AdSense approval).
+
 ### Leaderboard (Supabase) - go live
 
 The leaderboard code is already fully wired (`lib/supabase.ts`,
