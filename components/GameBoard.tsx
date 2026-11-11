@@ -17,17 +17,25 @@ import { SCORING_RULES } from "@/lib/scoring";
 
 const STREAK_KEY = "10clues_streak";
 const BEST_STREAK_KEY = "10clues_best_streak";
+const SESSION_SCORE_KEY = "10clues_session_score";
 const DISPLAY_NAME_KEY = "10clues_display_name";
-const RECENT_PEOPLE_KEY = "10clues_recent_people";
+const RECENT_PEOPLE_KEY = "10clues_recent_people_by_category";
 const HINTS_REMAINING_KEY = "10clues_hints_remaining";
 /**
- * How many recently-revealed person ids to keep excluding from future
- * picks. Capped (rather than unbounded) so the exclusion list doesn't grow
- * forever and so a category can still be replayed once fully cycled - the
- * server falls back to the full pool anyway if an exclusion would leave it
- * empty, so this is just a soft "don't repeat too soon" window.
+ * How many recently-revealed person ids to keep excluding from future picks,
+ * per category. Tracked per-category (rather than one shared list) so
+ * playing a mix of categories doesn't dilute a small category's memory -
+ * e.g. without this, a 15-person category like Logos could resurface the
+ * same person within just a handful of rounds once enough other-category
+ * picks pushed it out of a single shared list. Capped generously above the
+ * largest category size (50) so a full category cycle is remembered before
+ * any repeat is possible; the server falls back to the full pool anyway if
+ * an exclusion would leave it empty, so this is just a soft "don't repeat
+ * until you've seen everyone else" window, not a hard limit.
  */
-const RECENT_PEOPLE_LIMIT = 20;
+const RECENT_PEOPLE_LIMIT = 60;
+/** Key used for the "All Categories" / surprise-me recent-picks bucket. */
+const ALL_CATEGORIES_KEY = "__all__";
 
 type Phase = "picking" | "playing" | "revealed";
 
@@ -71,22 +79,48 @@ function readHintsRemaining(): number {
   return Number.isFinite(parsed) ? parsed : SCORING_RULES.MAX_HINTS_PER_STREAK;
 }
 
-function readRecentPersonIds(): string[] {
-  if (typeof window === "undefined") return [];
+function readRecentByCategory(): Record<string, string[]> {
+  if (typeof window === "undefined") return {};
   try {
     const raw = window.localStorage.getItem(RECENT_PEOPLE_KEY);
-    const parsed = raw ? JSON.parse(raw) : [];
-    return Array.isArray(parsed) ? parsed.filter((id) => typeof id === "string") : [];
+    const parsed = raw ? JSON.parse(raw) : {};
+    if (!parsed || typeof parsed !== "object") return {};
+    const result: Record<string, string[]> = {};
+    for (const [key, value] of Object.entries(parsed)) {
+      if (Array.isArray(value)) {
+        result[key] = value.filter((id) => typeof id === "string");
+      }
+    }
+    return result;
   } catch {
-    return [];
+    return {};
   }
 }
 
-function rememberRecentPersonId(id: string, current: string[]): string[] {
-  const next = [id, ...current.filter((existing) => existing !== id)].slice(
+/** Builds the list of recently-seen ids to exclude when starting a round for `category`. */
+function excludeIdsForCategory(
+  recentByCategory: Record<string, string[]>,
+  category: string | undefined
+): string[] {
+  if (category) return recentByCategory[category] ?? [];
+  // "All Categories"/surprise-me draws from every person, so merge every
+  // category's recent picks (each already most-recent-first) and cap at
+  // the server's 200-id limit, keeping the most recent overall.
+  return Object.values(recentByCategory).flat().slice(0, 200);
+}
+
+function rememberRecentPersonId(
+  category: string,
+  id: string,
+  current: Record<string, string[]>
+): Record<string, string[]> {
+  const bucketKey = category || ALL_CATEGORIES_KEY;
+  const existingBucket = current[bucketKey] ?? [];
+  const nextBucket = [id, ...existingBucket.filter((existing) => existing !== id)].slice(
     0,
     RECENT_PEOPLE_LIMIT
   );
+  const next = { ...current, [bucketKey]: nextBucket };
   window.localStorage.setItem(RECENT_PEOPLE_KEY, JSON.stringify(next));
   return next;
 }
@@ -110,7 +144,8 @@ export default function GameBoard() {
   const [reveal, setReveal] = useState<RevealState | null>(null);
   const [streak, setStreak] = useState(0);
   const [bestStreak, setBestStreak] = useState(0);
-  const [recentPersonIds, setRecentPersonIds] = useState<string[]>([]);
+  const [sessionScore, setSessionScore] = useState(0);
+  const [recentByCategory, setRecentByCategory] = useState<Record<string, string[]>>({});
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
   const [hintsRemainingInStreak, setHintsRemainingInStreak] = useState<number>(
     SCORING_RULES.MAX_HINTS_PER_STREAK
@@ -134,7 +169,8 @@ export default function GameBoard() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setStreak(readNumber(STREAK_KEY));
     setBestStreak(readNumber(BEST_STREAK_KEY));
-    setRecentPersonIds(readRecentPersonIds());
+    setSessionScore(readNumber(SESSION_SCORE_KEY));
+    setRecentByCategory(readRecentByCategory());
     setHintsRemainingInStreak(readHintsRemaining());
   }, []);
 
@@ -143,6 +179,11 @@ export default function GameBoard() {
     setBestStreak(nextBest);
     window.localStorage.setItem(STREAK_KEY, String(nextStreak));
     window.localStorage.setItem(BEST_STREAK_KEY, String(nextBest));
+  }, []);
+
+  const persistSessionScore = useCallback((next: number) => {
+    setSessionScore(next);
+    window.localStorage.setItem(SESSION_SCORE_KEY, String(next));
   }, []);
 
   const persistHintsRemaining = useCallback((next: number) => {
@@ -165,7 +206,7 @@ export default function GameBoard() {
         }>("/api/round/start", {
           category,
           currentStreak: streak,
-          excludeIds: recentPersonIds,
+          excludeIds: excludeIdsForCategory(recentByCategory, category),
         });
         setRound({
           roundToken: data.roundToken,
@@ -188,7 +229,7 @@ export default function GameBoard() {
         setStartLoading(false);
       }
     },
-    [streak, recentPersonIds]
+    [streak, recentByCategory]
   );
 
   const finishRound = useCallback(
@@ -201,7 +242,10 @@ export default function GameBoard() {
       const nextStreak = won ? result.score.newStreak : 0;
       const nextBest = Math.max(bestStreak, nextStreak);
       persistStreaks(nextStreak, nextBest);
-      setRecentPersonIds((current) => rememberRecentPersonId(result.id, current));
+      setRecentByCategory((current) =>
+        rememberRecentPersonId(result.category, result.id, current)
+      );
+      persistSessionScore(won ? sessionScore + result.score.finalScore : 0);
 
       // The hint pool refills per streak (not per round): a loss resets it
       // back to full for the next streak attempt, a win carries whatever
@@ -219,7 +263,7 @@ export default function GameBoard() {
         category: result.category,
       });
     },
-    [streak, bestStreak, persistStreaks, persistHintsRemaining]
+    [streak, bestStreak, sessionScore, persistStreaks, persistHintsRemaining, persistSessionScore]
   );
 
   const revealRound = useCallback(
@@ -388,9 +432,7 @@ export default function GameBoard() {
 
   return (
     <div className="flex flex-1 flex-col gap-5 py-4">
-      {phase !== "playing" && (
-        <StreakBadge streak={streak} bestStreak={bestStreak} />
-      )}
+      <StreakBadge streak={streak} bestStreak={bestStreak} sessionScore={sessionScore} />
 
       {error && (
         <p className="rounded-xl border border-rose-500/30 bg-rose-500/10 px-3 py-2 text-center text-sm text-rose-300">
@@ -440,7 +482,7 @@ export default function GameBoard() {
           <button
             type="button"
             onClick={giveUp}
-            className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed border-red-300 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700 transition hover:border-red-400 hover:bg-red-100 active:scale-[0.98] dark:border-red-900 dark:bg-red-950/40 dark:text-red-400 dark:hover:bg-red-950/60"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-red-600 px-4 py-3 text-sm font-bold text-white shadow-md shadow-red-950/30 transition hover:bg-red-700 active:scale-[0.98]"
           >
             🏳️ I give up... show me the answer
           </button>

@@ -8,6 +8,7 @@ export const CATEGORIES = [
   "Stadiums",
   "Landmarks",
   "Logos",
+  "Animals",
   "TV & Film",
   "Musicians",
   "Athletes",

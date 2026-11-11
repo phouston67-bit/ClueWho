@@ -14,6 +14,7 @@ const CATEGORY_EMOJI: Record<string, string> = {
   Landmarks: "🗼",
   Stadiums: "🏟️",
   Logos: "🏷️",
+  Animals: "🐾",
 };
 
 interface CategoryPickerProps {
@@ -29,13 +30,9 @@ export default function CategoryPicker({
   return (
     <div className="flex flex-col gap-4 animate-fade-in">
       <div className="text-center">
-        <h1 className="text-3xl font-extrabold tracking-tight text-white">
+        <h1 className="text-5xl font-extrabold tracking-tight text-white">
           10<span className="text-brand-400">Clues</span>
         </h1>
-        <p className="mt-2 text-sm text-slate-400">
-          Pick a category. We&apos;ll secretly choose a famous subject - ask up
-          to 10 yes/no questions, then guess who (or what) it is!
-        </p>
       </div>
 
       <details className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3 text-sm text-slate-300">
@@ -50,6 +47,15 @@ export default function CategoryPicker({
           <p>5. Consecutive correct rounds build a streak worth up to +100% bonus points - but one loss resets it to zero, so share your best streak and dare a friend to beat it!</p>
         </div>
       </details>
+
+      <button
+        type="button"
+        disabled={disabled}
+        onClick={() => onSelect(undefined)}
+        className="rounded-2xl bg-brand-600 px-4 py-4 text-center text-base font-semibold text-white shadow-lg shadow-brand-900/40 transition active:scale-95 hover:bg-brand-500 disabled:pointer-events-none disabled:opacity-50"
+      >
+        🎲 All Categories
+      </button>
 
       <div className="grid grid-cols-2 gap-3">
         {CATEGORIES.map((category) => (
@@ -69,15 +75,6 @@ export default function CategoryPicker({
           </button>
         ))}
       </div>
-
-      <button
-        type="button"
-        disabled={disabled}
-        onClick={() => onSelect(undefined)}
-        className="mt-1 rounded-2xl bg-brand-600 px-4 py-4 text-center text-base font-semibold text-white shadow-lg shadow-brand-900/40 transition active:scale-95 hover:bg-brand-500 disabled:pointer-events-none disabled:opacity-50"
-      >
-        🎲 All Categories
-      </button>
     </div>
   );
 }

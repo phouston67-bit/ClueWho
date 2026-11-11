@@ -7755,5 +7755,324 @@
     },
     "difficulty": 2,
     "wikidataId": "Q233112"
+  },
+  {
+    "id": "laika",
+    "name": "Laika",
+    "category": "Animals",
+    "aliases": [],
+    "facts": [
+      "A dog who became the first animal to orbit the Earth in 1957.",
+      "Launched aboard the Soviet spacecraft Sputnik 2.",
+      "A stray found on the streets of Moscow before being selected for the mission.",
+      "Became an international symbol of the early Space Race."
+    ],
+    "revealFact": "I was the first living creature to orbit the Earth, aboard Sputnik 2 in 1957.",
+    "wikidataId": "Q53662",
+    "image": {
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Laika_in_1957.jpg/960px-Laika_in_1957.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Laika_in_1957.jpg",
+      "license": "CC BY 4.0",
+      "attribution": "Музей космонавтики / Главархив Москвы via Wikimedia Commons (https://www.mos.ru/news/item/94754073/), licensed under CC BY 4.0."
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "hachiko",
+    "name": "Hachiko",
+    "category": "Animals",
+    "aliases": [],
+    "facts": [
+      "A dog famous for his remarkable loyalty to his owner in Japan.",
+      "Continued to wait at Shibuya Station for his deceased owner every day for nearly a decade.",
+      "A bronze statue of him stands outside Shibuya Station in Tokyo.",
+      "His story has inspired multiple films, including a 2009 Hollywood adaptation."
+    ],
+    "revealFact": "I waited for my owner at a train station every single day for almost 10 years after he passed away.",
+    "wikidataId": "Q186486",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Hachiko.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Hachiko.JPG",
+      "license": "Public domain",
+      "attribution": "Unknown authorUnknown author via Wikimedia Commons (archive copy at the Wayback Machine), licensed under Public domain."
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "balto",
+    "name": "Balto",
+    "category": "Animals",
+    "aliases": [],
+    "facts": [
+      "A sled dog who led the final leg of a life-saving medicine run across Alaska in 1925.",
+      "Helped deliver diphtheria antitoxin to the town of Nome during an outbreak.",
+      "A statue of him stands in New York City's Central Park.",
+      "A 1995 animated film was made about his heroic journey."
+    ],
+    "revealFact": "I led the final leg of the 1925 serum run that saved the town of Nome, Alaska.",
+    "wikidataId": "Q805807",
+    "image": {
+      "commonsFileUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Gunnar_Kaasen_with_Balto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Gunnar_Kaasen_with_Balto.jpg",
+      "license": "Public domain",
+      "attribution": "Brown Brothers via Wikimedia Commons (image, website), licensed under Public domain."
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "togo-sled-dog",
+    "name": "Togo",
+    "category": "Animals",
+    "aliases": [],
+    "facts": [
+      "A sled dog who led the longest and most dangerous leg of the 1925 serum run to Nome.",
+      "Ran nearly twice as far as Balto's team during the same relay.",
+      "Often considered by historians to be the true hero of the famous Alaskan relay.",
+      "A statue honoring him stands in Seward Park, New York."
+    ],
+    "revealFact": "I ran the longest, most treacherous stretch of the 1925 serum run - further than any other sled dog on the relay.",
+    "wikidataId": "Q1323381",
+    "image": {
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Leonhard_Seppala_with_dogs.jpg/960px-Leonhard_Seppala_with_dogs.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Leonhard_Seppala_with_dogs.jpg",
+      "license": "CC0",
+      "attribution": "Copyright: Copyright © Carrie McLain Museum / AlaskaStock via Wikimedia Commons (https://snl.no/Leonhard_Seppala), licensed under CC0."
+    },
+    "difficulty": 3
+  },
+  {
+    "id": "dolly-the-sheep",
+    "name": "Dolly",
+    "category": "Animals",
+    "aliases": [],
+    "facts": [
+      "The first mammal ever successfully cloned from an adult somatic cell.",
+      "Created by scientists in Scotland in 1996.",
+      "Named after the singer Dolly Parton.",
+      "Her creation marked a landmark breakthrough in genetic science."
+    ],
+    "revealFact": "I was the first mammal ever cloned from an adult cell, created by Scottish scientists in 1996.",
+    "wikidataId": "Q171433",
+    "image": {
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Dolly_face_closeup.jpg/960px-Dolly_face_closeup.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Dolly_face_closeup.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Toni Barros from São Paulo, Brasil via Wikimedia Commons (Hello, Dolly!), licensed under CC BY-SA 2.0."
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "knut-polar-bear",
+    "name": "Knut",
+    "category": "Animals",
+    "aliases": [],
+    "facts": [
+      "A polar bear born in captivity at the Berlin Zoological Garden in 2006.",
+      "Rejected by his mother and hand-raised by a zookeeper.",
+      "Became a global media sensation and tourist attraction in Germany.",
+      "His early life was the subject of worldwide news coverage and a hit song."
+    ],
+    "revealFact": "I was a polar bear hand-raised by a zookeeper after my mother rejected me, and I became a worldwide sensation in Berlin.",
+    "wikidataId": "Q159697",
+    "image": {
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Knut_2007_LKM.jpg/960px-Knut_2007_LKM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Knut_2007_LKM.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "L_K_M / Lucas Mathis, Zürich, Switzerland via Wikimedia Commons (flickr.com), licensed under CC BY-SA 2.0."
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "cecil-the-lion",
+    "name": "Cecil",
+    "category": "Animals",
+    "aliases": [],
+    "facts": [
+      "A lion who lived in Hwange National Park in Zimbabwe.",
+      "Was being studied as part of a long-term Oxford University research project.",
+      "His killing by a trophy hunter in 2015 sparked global outrage.",
+      "His death intensified international debate over trophy hunting of wildlife."
+    ],
+    "revealFact": "I was a protected, closely-studied lion in Zimbabwe whose killing by a trophy hunter sparked a worldwide outcry in 2015.",
+    "wikidataId": "Q20739486",
+    "image": {
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Cecil_the_lion_at_Hwange_National_Park_%284516560206%29.jpg/960px-Cecil_the_lion_at_Hwange_National_Park_%284516560206%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cecil_the_lion_at_Hwange_National_Park_(4516560206).jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Daughter#3 via Wikimedia Commons (Cecil), licensed under CC BY-SA 2.0."
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "lonesome-george",
+    "name": "Lonesome George",
+    "category": "Animals",
+    "aliases": [],
+    "facts": [
+      "The last known individual of the Pinta Island tortoise subspecies.",
+      "Discovered on the Galapagos island of Pinta in 1971.",
+      "Lived for decades at the Charles Darwin Research Station in the Galapagos.",
+      "Became an international symbol of conservation and species extinction."
+    ],
+    "revealFact": "I was the very last Pinta Island tortoise, and my death in 2012 marked the extinction of my entire subspecies.",
+    "wikidataId": "Q16570",
+    "image": {
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Lonesome_George_%282009%29.jpg/960px-Lonesome_George_%282009%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Lonesome_George_(2009).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Peter Wilton via Wikimedia Commons (Lonesome George\n\nUploaded by Magnus Manske), licensed under CC BY 2.0."
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "harambe",
+    "name": "Harambe",
+    "category": "Animals",
+    "aliases": [],
+    "facts": [
+      "A captive gorilla who lived at the Cincinnati Zoo.",
+      "Was shot and killed in 2016 after a child fell into his enclosure.",
+      "His death sparked an enormous public debate about zoo safety.",
+      "Became an unlikely, widely-referenced internet meme in the years after his death."
+    ],
+    "revealFact": "I was a zoo gorilla whose death in 2016 sparked global debate and became one of the internet's most famous memes.",
+    "wikidataId": "Q26388682",
+    "image": {
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Cincinnati_Zoo_Gorilla_2011.jpg/960px-Cincinnati_Zoo_Gorilla_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cincinnati_Zoo_Gorilla_2011.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Jason Miklacic via Wikimedia Commons (Western Lowland Gorilla), licensed under CC BY-SA 2.0."
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "paul-the-octopus",
+    "name": "Paul the Octopus",
+    "category": "Animals",
+    "aliases": [
+      "Paul"
+    ],
+    "facts": [
+      "An octopus who lived in a German aquarium and became known for \"predicting\" football match outcomes.",
+      "Correctly predicted the outcome of all seven of Germany's matches at the 2010 World Cup.",
+      "Chose predictions by selecting food from boxes marked with national flags.",
+      "Became a worldwide media phenomenon during the 2010 World Cup."
+    ],
+    "revealFact": "I was an octopus who correctly \"predicted\" the outcome of every German match at the 2010 World Cup.",
+    "wikidataId": "Q151922",
+    "image": {
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Oktopus-Orakel_Paul_mit_Schuh.JPG/960px-Oktopus-Orakel_Paul_mit_Schuh.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Oktopus-Orakel_Paul_mit_Schuh.JPG",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Tilla via Wikimedia Commons (Own work), licensed under CC BY-SA 3.0."
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "jumbo-the-elephant",
+    "name": "Jumbo",
+    "category": "Animals",
+    "aliases": [],
+    "facts": [
+      "A famous African elephant who lived in the 19th century.",
+      "Was a star attraction at London Zoo before being sold to an American circus.",
+      "Toured North America as one of P. T. Barnum's biggest circus attractions.",
+      "His name became the root of the English word \"jumbo\", meaning very large."
+    ],
+    "revealFact": "My name is the reason the word \"jumbo\" means extra-large - I was P. T. Barnum's star circus elephant in the 1880s.",
+    "wikidataId": "Q831999",
+    "image": {
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Jumbo_and_Matthew_Scott%C2%B2.png/960px-Jumbo_and_Matthew_Scott%C2%B2.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Jumbo_and_Matthew_Scott%C2%B2.png",
+      "license": "Public domain",
+      "attribution": "Edward Bierstadt via Wikimedia Commons (http://dl.tufts.edu/imageviewer/tufts:MS002.001.005.00003.00001#page/1/mode/1up \n\nOriginal publication: Bierstadt, E. “Jumbo and trainer.” 1882-06-11. Digital Collections and Archives. Tufts University. Medford, MA. http://hdl.handle.net/10427/35357), licensed under Public domain."
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "grumpy-cat",
+    "name": "Grumpy Cat",
+    "category": "Animals",
+    "aliases": [
+      "Tardar Sauce"
+    ],
+    "facts": [
+      "A cat who became a global internet celebrity due to her permanently grumpy-looking facial expression.",
+      "Her expression was caused by an underlying feline dwarfism and malocclusion.",
+      "Real name was Tardar Sauce, though she became known worldwide by her nickname.",
+      "Starred in a TV movie and appeared on countless magazine covers and merchandise."
+    ],
+    "revealFact": "I was an internet-famous cat whose permanently grumpy face - caused by feline dwarfism - made me a global meme.",
+    "wikidataId": "Q7714263",
+    "image": {
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Grumpy_Cat_%2814556024763%29_%28cropped%29.jpg/960px-Grumpy_Cat_%2814556024763%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Grumpy_Cat_(14556024763)_(cropped).jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Gage Skidmore from Peoria, AZ, United States of America via Wikimedia Commons (Grumpy Cat &amp; Rafi Fine), licensed under CC BY-SA 2.0."
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "phar-lap",
+    "name": "Phar Lap",
+    "category": "Animals",
+    "aliases": [],
+    "facts": [
+      "A champion Thoroughbred racehorse foaled in New Zealand and raised in Australia.",
+      "Dominated Australian horse racing during the Great Depression era.",
+      "Won the Melbourne Cup in 1930 and became a beloved national hero.",
+      "Died suddenly in the United States in 1932, fueling conspiracy theories for decades."
+    ],
+    "revealFact": "I was a champion racehorse who won the 1930 Melbourne Cup and became an Australian national hero during the Great Depression.",
+    "wikidataId": "Q379362",
+    "image": {
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Phar_Lap.jpg/960px-Phar_Lap.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Phar_Lap.jpg",
+      "license": "Public domain",
+      "attribution": "Charles Daniel Pratt via Wikimedia Commons (https://handle.slv.vic.gov.au/10381/20570), licensed under Public domain."
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "secretariat",
+    "name": "Secretariat",
+    "category": "Animals",
+    "aliases": [],
+    "facts": [
+      "A champion Thoroughbred racehorse who won the American Triple Crown in 1973.",
+      "Set record times in all three Triple Crown races that still stand today.",
+      "Won the Belmont Stakes by an astonishing 31 lengths.",
+      "Widely regarded as one of the greatest racehorses in history."
+    ],
+    "revealFact": "I won the 1973 Triple Crown and set a Belmont Stakes record by winning by 31 lengths - a mark still unbeaten today.",
+    "wikidataId": "Q1151926",
+    "image": {
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Secretariat_statue.jpg/960px-Secretariat_statue.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Secretariat_statue.jpg",
+      "license": "Public domain",
+      "attribution": "Jlvsclrk via Wikimedia Commons (Own work), licensed under Public domain."
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "clever-hans",
+    "name": "Clever Hans",
+    "category": "Animals",
+    "aliases": [],
+    "facts": [
+      "A horse said in the early 1900s to be able to perform arithmetic and other intellectual tasks.",
+      "Appeared to tap out answers to math problems with his hoof.",
+      "Investigations revealed he was actually reading subtle, unintentional cues from his trainer.",
+      "His case gave rise to the term \"Clever Hans effect\" in psychology and animal cognition research."
+    ],
+    "revealFact": "I was a horse who seemed to do math, but was really reading tiny unconscious cues from people - giving psychology the \"Clever Hans effect\".",
+    "wikidataId": "Q1127291",
+    "image": {
+      "commonsFileUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Hans_1910.jpg/960px-Hans_1910.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Hans_1910.jpg",
+      "license": "Public domain",
+      "attribution": "Karl Krall via Wikimedia Commons (Karl Krall, Denkende Tiere, Leipzig 1912, Tafel 2), licensed under Public domain."
+    },
+    "difficulty": 3
   }
 ]

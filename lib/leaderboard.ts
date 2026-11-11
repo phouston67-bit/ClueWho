@@ -43,20 +43,59 @@ export async function recordLeaderboardEntry(entry: {
   }
 }
 
-/** Fetch the top N leaderboard entries by score, if Supabase is configured. */
+export type TimeRange = "today" | "week" | "month" | "all";
+
+/** Computes the ISO cutoff timestamp for a given time-range filter, or null for "all". */
+function cutoffForTimeRange(range: TimeRange | undefined): string | null {
+  if (!range || range === "all") return null;
+  const now = new Date();
+  if (range === "today") {
+    const start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    return start.toISOString();
+  }
+  if (range === "week") {
+    // Monday-start week.
+    const day = now.getDay(); // 0 (Sun) - 6 (Sat)
+    const diffToMonday = (day + 6) % 7;
+    const start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - diffToMonday);
+    return start.toISOString();
+  }
+  // "month"
+  const start = new Date(now.getFullYear(), now.getMonth(), 1);
+  return start.toISOString();
+}
+
+/**
+ * Fetch the top N leaderboard entries by score, if Supabase is configured.
+ * Pass a `category` (one of lib/types's CATEGORIES) to scope the results to
+ * just that category's best scores; omit it (or pass "All") for the
+ * combined, all-categories leaderboard. Pass `timeRange` to scope by when
+ * the entry was recorded ("today" / "week" / "month"); omit it (or pass
+ * "all") for an all-time leaderboard.
+ */
 export async function fetchTopLeaderboardEntries(
-  limit = 10
+  limit = 10,
+  category?: string,
+  timeRange?: TimeRange
 ): Promise<LeaderboardEntry[]> {
   if (!isSupabaseConfigured()) return [];
   const supabase = getSupabaseBrowserClient();
   if (!supabase) return [];
 
   try {
-    const { data, error } = await supabase
+    let query = supabase
       .from("leaderboard_entries")
       .select("id, display_name, score, streak, category, created_at")
       .order("score", { ascending: false })
       .limit(limit);
+    if (category && category !== "All") {
+      query = query.eq("category", category);
+    }
+    const cutoff = cutoffForTimeRange(timeRange);
+    if (cutoff) {
+      query = query.gte("created_at", cutoff);
+    }
+    const { data, error } = await query;
     if (error) return [];
     return (data as LeaderboardEntry[]) ?? [];
   } catch {

@@ -30,11 +30,23 @@ export default function AdSlot({
   const sizeClasses =
     slot === "interstitial" ? "min-h-[160px]" : "min-h-[60px]";
   const insRef = useRef<HTMLModElement>(null);
+  const hasPushedRef = useRef(false);
 
   useEffect(() => {
     if (!configured) return;
+    // React Strict Mode intentionally double-invokes effects in development
+    // (mount -> effect -> cleanup -> effect again) without actually
+    // unmounting the DOM, so the same real <ins> element would otherwise
+    // get adsbygoogle.push() called on it twice - AdSense throws "already
+    // have ads in them" on the second call. AdSense only marks the slot
+    // with data-adsbygoogle-status once the ad has actually rendered
+    // (which can be async/delayed), so that attribute can't be checked
+    // synchronously here; a ref flag set immediately after push() persists
+    // across the same double-invocation and reliably prevents the re-push.
+    if (hasPushedRef.current) return;
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
+      hasPushedRef.current = true;
     } catch {
       // AdSense script not loaded yet (e.g. an ad blocker) - fail silently,
       // never block gameplay on ad delivery.

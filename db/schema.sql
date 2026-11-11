@@ -98,6 +98,9 @@ create index if not exists leaderboard_entries_score_idx
   on leaderboard_entries (score desc);
 create index if not exists leaderboard_entries_streak_idx
   on leaderboard_entries (streak desc);
+-- Powers the per-category leaderboard tabs (category, score desc).
+create index if not exists leaderboard_entries_category_score_idx
+  on leaderboard_entries (category, score desc);
 
 -- ---------------------------------------------------------------------------
 -- Row Level Security (RLS) policy stubs

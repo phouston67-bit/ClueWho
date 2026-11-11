@@ -13,7 +13,7 @@ Built with **Next.js 16 (App Router, TypeScript)**, **Tailwind CSS**, the
 
 1. **Pick a category** (TV & Film, Musicians, Athletes, Football, Historical
    Figures, Scientists, Politicians, Business Leaders, Landmarks, Stadiums,
-   Logos) or hit "All Categories".
+   Logos, Animals) or hit "All Categories".
 2. The server (`POST /api/round/start`) secretly picks a person from
    `data/people.json` and returns only their **photo + category** - never
    the name or facts - plus an opaque, signed round token.
@@ -69,7 +69,7 @@ lib/
   people.ts       # Server-only dataset access
   leaderboard.ts  # Best-effort client-side leaderboard read/write
   types.ts        # Shared domain types
-data/people.json          # Curated dataset (365 people across 11 categories)
+data/people.json          # Curated dataset (380 people across 12 categories)
 scripts/seed-people.ts    # Resolves real licensed photos from Wikidata/Commons
 db/schema.sql             # Optional Supabase schema + RLS policy stubs
 ```
@@ -119,10 +119,10 @@ anyone can read the leaderboard). Tighten them (e.g. scope to
 
 ### 4. Seed real, licensed photos
 
-`data/people.json` ships with 365 people across 11 categories (50 each for
+`data/people.json` ships with 380 people across 12 categories (50 each for
 TV & Film/Musicians/Athletes/Football, 30 each for Historical Figures/
 Scientists/Politicians/Business Leaders, 15 each for Landmarks/Stadiums/
-Logos), and every entry already has a real, licensed photo resolved via
+Logos/Animals), and every entry already has a real, licensed photo resolved via
 Wikidata + Wikimedia Commons (see below) - no seeding is required before you
 can play. Re-run `npm run seed` any time you add new people to the dataset
 (it only re-resolves entries with a missing/`TODO` image, so it's always
@@ -278,7 +278,9 @@ no code changes needed:
    `SUPABASE_SERVICE_ROLE_KEY`.
 4. Redeploy. The "Global leaderboard requires Supabase" placeholder in
    `components/Leaderboard.tsx` will disappear and start showing real
-   scores immediately.
+   scores immediately, filterable by category (All + each of the 12
+   categories) and by time range (Today / This Week / This Month / All
+   Time).
 5. The RLS policies shipped in `db/schema.sql` are permissive stubs
    appropriate for a casual, low-stakes game (anyone can insert a
    leaderboard entry). Tighten them (rate limiting, `auth.uid()` scoping)

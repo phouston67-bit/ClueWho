@@ -30,9 +30,19 @@ export default function ImageReveal({
 }: ImageRevealProps) {
   const [imgError, setImgError] = useState(false);
   const showPlaceholder = !hasRealImage(image) || imgError;
+  // Brand logos are usually transparent PNGs/SVGs with dark linework, which
+  // disappears against our dark theme. Give them a light card + "contain"
+  // fit so the full mark stays visible and isn't cropped like a photo.
+  const isLogo = category === "Logos";
 
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-xl">
+    <div
+      className={`relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-3xl border shadow-xl ${
+        isLogo && !showPlaceholder
+          ? "border-slate-200 bg-white"
+          : "border-slate-800 bg-slate-900"
+      }`}
+    >
       {showPlaceholder ? (
         <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-slate-800 to-slate-950 text-slate-500">
           <span className="text-6xl" aria-hidden>
@@ -48,7 +58,9 @@ export default function ImageReveal({
         <img
           src={image.commonsFileUrl}
           alt={revealed && name ? name : `A mystery subject from ${category}`}
-          className="h-full w-full object-cover"
+          className={
+            isLogo ? "h-full w-full object-contain p-8" : "h-full w-full object-cover"
+          }
           onError={() => setImgError(true)}
         />
       )}
